@@ -7,7 +7,7 @@ This project it intended for management of riffle distribution management
    - You should have XAMPP installed for windows or LAMPP for linux
    - Import database from root/api/database/armory.sql
    - Change database user to yours from root/api/classes/Database replace <b>super</b> with the one you use
-   - Then,web is set well now setup its android application from www.github.com/themottorw/armory_app
+   - Then,web is set well now setup its android application from www.github.com/themottorw/riffle_distribution_app
 
 
 ### Users and Privileges
