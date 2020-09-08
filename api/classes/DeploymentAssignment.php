@@ -23,7 +23,7 @@ class DeploymentAssignment
         $feed = ['status' => 'ok', 'message' => "<div class='alert alert-success'> Assignment done sucessful</div>"];
         $deployer = $arr['sess_id'];
         $post = $arr['post'];
-        $police = $this->policeObj->getByPoliceId($arr['police'])[0]['id'];
+        $police = $arr['police'];
         $workdate = $arr['workdate'];
 
         $insert = $this->conn->prepare("INSERT INTO deployment_assignment set post=:post,deployer=:deployer,police=:police,work_date=:workdate");
@@ -44,7 +44,7 @@ class DeploymentAssignment
         $feed = ['status' => 'ok', 'message' => "<div class='alert alert-success'>Assignment updated sucessful</div>"];
         $deployer = $arr['sess_id'];
         $post = $arr['post'];
-        $police = $this->policeObj->getByPoliceId($arr['police'])[0]['id'];
+        $police = $arr['police'];
         $workdate = $arr['workdate'];
 
         $id = $arr['id'];

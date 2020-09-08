@@ -26,7 +26,7 @@
                     </div>
                     <!-- Header-btn -->
                     <div class="header-btns d-none d-lg-block f-right">
-                        <a href="signout.php" class="btn">Sign Out</a>
+                        <a href="signout.php" class="btn">Sign Out (<?= $_SESSION['sess_name'];?>)</a>
                     </div>
                     <!-- Mobile Menu -->
                     <div class="col-12">

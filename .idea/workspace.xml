@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e16e9308-6ff1-4c36-ad55-91809dde9d81" name="Default Changelist" comment="" />
+    <list default="true" id="e16e9308-6ff1-4c36-ad55-91809dde9d81" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/classes/DeploymentAssignment.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/classes/DeploymentAssignment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/classes/Police.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/classes/Police.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/requests/police.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/requests/police.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment.php" beforeDir="false" afterPath="$PROJECT_DIR$/assignment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/headers_logged.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/headers_logged.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/police.php" beforeDir="false" afterPath="$PROJECT_DIR$/police.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/policeDeploy.php" beforeDir="false" afterPath="$PROJECT_DIR$/policeDeploy.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,7 +20,11 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1h2ae4OBVShLSCxheEXHVRayfIa" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -35,7 +49,8 @@
       <workItem from="1599296780381" duration="10137000" />
       <workItem from="1599314019594" duration="4654000" />
       <workItem from="1599387473680" duration="2982000" />
-      <workItem from="1599463477289" duration="5055000" />
+      <workItem from="1599463477289" duration="6560000" />
+      <workItem from="1599542409450" duration="2375000" />
     </task>
     <servers />
   </component>
@@ -51,22 +66,22 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="72" y="27" width="1828" height="1053" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1599214398391" />
-    <state width="1240" height="225" key="GridCell.Tab.0.bottom" timestamp="1599468143591">
+    <state width="1240" height="225" key="GridCell.Tab.0.bottom" timestamp="1599468689332">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1240" height="225" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1599468143591" />
-    <state width="1240" height="225" key="GridCell.Tab.0.center" timestamp="1599468143591">
+    <state width="1240" height="225" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1599468689332" />
+    <state width="1240" height="225" key="GridCell.Tab.0.center" timestamp="1599468689331">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1240" height="225" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1599468143591" />
-    <state width="1240" height="225" key="GridCell.Tab.0.left" timestamp="1599468143591">
+    <state width="1240" height="225" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1599468689331" />
+    <state width="1240" height="225" key="GridCell.Tab.0.left" timestamp="1599468689330">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1240" height="225" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1599468143591" />
-    <state width="1240" height="225" key="GridCell.Tab.0.right" timestamp="1599468143591">
+    <state width="1240" height="225" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1599468689330" />
+    <state width="1240" height="225" key="GridCell.Tab.0.right" timestamp="1599468689331">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1240" height="225" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1599468143591" />
+    <state width="1240" height="225" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1599468689331" />
     <state x="720" y="268" width="542" height="578" key="NewPhpClassDialog" timestamp="1599387840143">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>

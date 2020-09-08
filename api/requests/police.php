@@ -36,6 +36,9 @@ switch ($_SERVER['REQUEST_METHOD']) {
             case 'bydeployment':
                 echo json_encode($police->getByDeployment($_GET));
                 break;
+            case 'byready':
+                echo json_encode($police->getByReadyForDeployment($_GET));
+                break;
             default:
                 echo "value of parameter category not known";
                 break;

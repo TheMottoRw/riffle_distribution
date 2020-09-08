@@ -72,7 +72,7 @@ include_once "includes/".$headers; ?>
                 <th>Phone</th>
                 <th>Police ID</th>
                 <th>Ranks</th>
-                <th>Deployment</th>
+                <th>Status</th>
                 <th colspan="5">Action</th>
             </tr>
             </thead>
@@ -89,7 +89,7 @@ include_once "includes/".$headers; ?>
                     <td><?= $obj['deployment']; ?></td>
                     <td>
                         <a href="policeDeploy.php?id=<?= $obj['id']; ?>" class="genric-btn bg-secondary"
-                           title="Police deployment">Deploy</a>
+                           title="Police deployment">Change Status</a>
                         <a href="policeEdit.php?id=<?= $obj['id']; ?>" class="genric-btn primary-border"
                            title="Police edit">Edit</a>
                         <a href="#api/requests/police.php?cate=delete&id=<?= $obj['id']; ?>"

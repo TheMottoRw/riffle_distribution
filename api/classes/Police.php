@@ -124,6 +124,15 @@ class Police
         return $data;
     }
 
+    function getByReadyForDeployment($arr)
+    {
+        $deployment = $arr['deployment'];
+        $getall = $this->conn->prepare("SELECT * from police WHERE deployment=:status");
+        $getall->execute(['status'=>'Ready']);
+        $data = $getall->fetchAll(PDO::FETCH_ASSOC);
+        return $data;
+    }
+
     function get()
     {
         $getall = $this->conn->prepare("SELECT * from police");

@@ -7,6 +7,8 @@ $apiPostReq = curlGetRequest("posts.php?cate=bydistrict&district=" . $_SESSION['
 $apiPosts = json_decode($apiPostReq, TRUE);
 $apiAssignmentsReq = curlGetRequest("assignment.php?cate=bydeployer&deployer=" . $_SESSION['sess_id']);
 $apiAssignments = json_decode($apiAssignmentsReq, TRUE);
+$apiPoliceReq = curlGetRequest("police.php?cate=byready&deployer=" . $_SESSION['sess_id']);
+$apiPolice = json_decode($apiPoliceReq, TRUE);
 ?>
 <html class="no-js" lang="zxx">
 <head>
@@ -94,8 +96,8 @@ $apiAssignments = json_decode($apiAssignmentsReq, TRUE);
                 <td><?= $obj['work_date']; ?></td>
                 <td>
                     <?php if ($obj['weapon_serial_number'] == null) { ?>
-                        <a href="#assign.php?id=<?= $obj['id'];?>" class=" genric-btn primary-border" title="Edit"><span
-                                    class="fa fa-plus-square"></span> Assign</a>
+<!--                        <a href="#assign.php?id=--><?//= $obj['id'];?><!--" class=" genric-btn primary-border" title="Edit"><span-->
+<!--                                    class="fa fa-plus-square"></span> Assign</a>-->
                     <?php } ?>
                     <a href="assignmentEdit.php?id=<?= $obj['id']; ?>" class="genric-btn info-border"
                        title="Edit"><span class="fa fa-edit"></span> Edit</a>
@@ -138,7 +140,12 @@ $apiAssignments = json_decode($apiAssignmentsReq, TRUE);
                                 </div>
                                 <div class="form-group">
                                     <label>Police ID</label>
-                                    <input class="form-control" name="police" id="police" type="text">
+                                    <select class="form-control" name="police">
+                                        <?php foreach ($apiPolice as $afande){ ?>
+                                        <option value="<?= $afande['id']; ?>"><?= $afande['name']." - ".$afande['police_id']; ?></option>
+                                        <?php } ?>
+                                    </select>
+<!--                                    <input class="form-control" name="police" id="police" type="text">-->
                                 </div>
                                 <div class="form-group">
                                     <label>Workdate</label>

@@ -75,12 +75,15 @@ include_once "includes/" . $headers; ?>
                         <div class="form-group">
                             <label>Name</label>
                             <input class="form-control valid" name="name" id="name" type="text"
-                                   placeholder="Enter your name" value="<?= $policeObj['name'];?>" readonly>
+                                   placeholder="Enter your name" value="<?= $policeObj['name']; ?>" readonly>
                         </div>
                         <div class="form-group">
-                            <label>Deployment</label>
-                            <input class="form-control" name="district" id="district" type="text"
-                                   value="<?= $policeObj['deployment']; ?>">
+                            <label>Deployment status</label><br>
+                            <select class="form-control valid" name="district">
+                                <option <?= $policeObj['deployment'] == "Ready" ? "selected" : ""; ?>>Ready</option>
+                                <option <?= $policeObj['deployment'] == "Not Ready" ? "selected" : ""; ?>>Not Ready
+                                </option>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group mt-3">
@@ -117,7 +120,7 @@ include_once "includes/" . $headers; ?>
 <!-- Date Picker -->
 <script src="./assets/js/gijgo.min.js"></script>
 <!-- Nice-select, sticky -->
-<script src="./assets/js/jquery.nice-select.min.js"></script>
+<!--<script src="./assets/js/jquery.nice-select.min.js"></script>-->
 <script src="./assets/js/jquery.sticky.js"></script>
 <!-- Progress -->
 <script src="./assets/js/jquery.barfiller.js"></script>
@@ -139,6 +142,4 @@ include_once "includes/" . $headers; ?>
 <script src="./assets/js/plugins.js"></script>
 <script src="./assets/js/main.js"></script>
 
-</body>
-</html>
 </html>
