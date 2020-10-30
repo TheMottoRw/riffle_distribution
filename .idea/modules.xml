@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../../learn/Laravel/.idea/Laravel.iml" filepath="$PROJECT_DIR$/../../../learn/Laravel/.idea/Laravel.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/armory.iml" filepath="$PROJECT_DIR$/.idea/armory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../izipark/.idea/izipark.iml" filepath="$PROJECT_DIR$/../../izipark/.idea/izipark.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../parking/.idea/parking.iml" filepath="$PROJECT_DIR$/../../../parking/.idea/parking.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../qrcode/phpqrcode/.idea/phpqrcode.iml" filepath="$PROJECT_DIR$/../../../qrcode/phpqrcode/.idea/phpqrcode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../quickdata/.idea/quickdata.iml" filepath="$PROJECT_DIR$/../../quickdata/.idea/quickdata.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../sosoma_crms/.idea/sosoma_crms.iml" filepath="$PROJECT_DIR$/../../sosoma_crms/.idea/sosoma_crms.iml" />
     </modules>
   </component>
 </project>

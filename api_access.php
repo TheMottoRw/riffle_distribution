@@ -37,11 +37,19 @@ function setSession($arr){
     }
 }
 function validateSession($allowedSession){
-    if(!isset($_SESSION['sessid']) || !isset($_SESSION['category'])) header("location:login.php");
-    else{//validate if allowed to access the page
-        if($_SESSION['category'] != $allowedSession) {
-            session_destroy();
-                header("location:login.php");
+    $currentFile = basename($_SERVER['PHP_SELF']);
+    $dualPrivileged = ['returned_reports.php','nonreturned_reports.php','standard_reports.php'];
+    if(!isset($_SESSION['sess_id']) || !isset($_SESSION['sess_category'])) header("location:signin.php");
+    else {
+        //validate privileges
+        if(!in_array($currentFile,$dualPrivileged)){
+            //check allowed privilege
+            if(!in_array($_SESSION['sess_category'],$allowedSession)){
+                echo "<script>alert('".json_encode($_SESSION)."')</script>";
+                session_destroy();
+                echo "<script>window.location='signin.php';</script>";
+//                header("location:signin.php");
+            }
         }
     }
 }

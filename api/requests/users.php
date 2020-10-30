@@ -23,9 +23,19 @@ switch ($_SERVER['REQUEST_METHOD']) {
         header("Content-Type:application/json");
 	switch ($_GET['cate']) {
 		
-        case 'deleteUser':
-        $userObj->deleteUser($_GET['id']); 
+        case 'delete':
+        $del = $userObj->deleteUser($_GET);
+            if($del['status']=='ok') header("location:".$_SERVER['HTTP_REFERER']);
          break;
+        case 'reset':
+            header("Content-Type:text/html");
+            $res = $userObj->resetUser($_GET);
+            if($res['status'] == 'ok')
+                echo "<script>alert('Password resetted successful');</script>";
+            else if($res['status']=='notmatch') echo "<script>alert('Password does not match');</script>";
+            else echo "<script>alert('Failed to reset password')</script>";
+            echo "<script>window.location='../../users.php';</script>";
+            break;
 
         case 'loadbyid':
         // header("Content-Type:application/json");
@@ -42,12 +52,12 @@ switch ($_SERVER['REQUEST_METHOD']) {
               break;      
 
 		default:
-			echo "value of parameter category not known";
+			echo json_encode(['error'=>"value of parameter category not known"]);
 			break;
 	}
 	break;
 	default:
-		echo $_SERVER['REQUEST_METHOD']." Request method not allowed";
+        echo json_encode(['error'=>$_SERVER['REQUEST_METHOD']." Request method not allowed"]);
 		break;
 }
 

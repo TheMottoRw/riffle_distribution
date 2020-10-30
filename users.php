@@ -91,10 +91,58 @@ $apiUsers = json_decode($apiUsersReq, TRUE);
                             <td><?= $obj['level']; ?></td>
                             <td><?= $obj['category']; ?></td>
                             <td>
+                                <a href="usersEdit.php?id=<?= $obj['id'];?> " class="genric-btn primary-border" data-toggle="modal" data-target="#resetPassword<?= $obj['id']; ?>" title="Reset"><span
+                                            class="fa fa-unlock"></span> Reset</a>
                                 <a href="usersEdit.php?id=<?= $obj['id'];?> " class="genric-btn primary-border" title="Edit"><span
                                             class="fa fa-edit"></span>Edit</a>
-                                <a href="#" class="genric-btn danger-border" title="Delete"><span
+                                <a href="api/requests/users.php?cate=delete&id=<?= $obj['id'] ?>" class="genric-btn danger-border" title="Delete"><span
                                             class="fa fa-trash"></span>Delete</a>
+
+                                <div class="portfolio-modal modal fade" id="resetPassword<?= $obj['id']; ?>" tabindex="-1" role="dialog"
+                                     aria-labelledby="portfolioModal2Label" style="display: none;" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg" role="document">
+                                        <form method="GET" action="api/requests/users.php" class="form-contact contact_form">
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    <div class="container">
+                                                        <div class="row justify-content-center">
+                                                            <div class="col-lg-12"><br>
+                                                                <!-- Portfolio Modal - Title -->
+                                                                <h4 class="portfolio-modal-title text-center text-secondary text-uppercase mb-0">
+                                                                    Reset user password</h4>
+                                                                <hr>
+                                                                <input type="hidden" name="cate" value="reset">
+                                                                <input type="hidden" name="id" value="<?= $obj['id'];?>">
+                                                                <div class="form-group">
+                                                                    <label>Name</label>
+                                                                    <input class="form-control valid" name="name" id="name" type="text"
+                                                                           placeholder="Enter your name" readonly="readonly" value="<?= $obj['name']; ?>">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Password</label>
+                                                                    <input class="form-control" name="password" id="password" type="password"
+                                                                           placeholder="Enter strong password">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Change Password</label>
+                                                                    <input class="form-control" name="confPassword" id="confPassword" type="password"
+                                                                           placeholder="Confirm password">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <input class="genric-btn primary circle" type="submit" name="btnRegister" value="Register">
+                                                    <button class="genric-btn danger-border circle" href="#" data-dismiss="modal">
+                                                        <i class="fas fa-times"></i>
+                                                        Close
+                                                    </button>
+                                                </div>
+                                        </form>
+                                    </div>
+                                </div>
+
                             </td>
                         </tr>
                         <?php
@@ -150,11 +198,12 @@ $apiUsers = json_decode($apiUsersReq, TRUE);
                                         <option value="default">Select category</option>
                                         <option value="Superadmin">Super admin</option>
                                         <option value="Deployer">In charge of deployment</option>
+                                        <option value="Riffle_distributor">In charge of Riffle distribution</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label>Level</label>
-                                    <select name="department" class="form-control" style="width: 100%">
+                                    <select name="level" class="form-control" style="width: 100%">
                                         <option value="default">Select level</option>
                                         <option selected>District</option>
                                     </select>
@@ -177,7 +226,6 @@ $apiUsers = json_decode($apiUsersReq, TRUE);
                 </div>
         </form>
     </div>
-</div>
 </div>
 
 </body>
@@ -230,5 +278,4 @@ $apiUsers = json_decode($apiUsersReq, TRUE);
 <script src="./assets/js/main.js"></script>
 
 </body>
-</html>
 </html>

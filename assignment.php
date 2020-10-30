@@ -61,11 +61,18 @@ $apiPolice = json_decode($apiPoliceReq, TRUE);
                value="Make an assignment">
         <?php
         if (isset($_POST['btnRegister'])) {
-            $postData = array_merge(['cate' => 'register'], $_POST, $_SESSION);
-            $resp = curlPostRequest('assignment.php', $postData);
-            $respArr = json_decode($resp, TRUE);
-            if (isset($respArr['message'])) {
-                echo $respArr['message'];
+            if($_POST['post']!='default' && $_POST['police']!='default'){
+                $postData = array_merge(['cate' => 'register'], $_POST, $_SESSION);
+                $resp = curlPostRequest('assignment.php', $postData);
+                $respArr = json_decode($resp, TRUE);
+                if (isset($respArr['message'])) {
+                    echo $respArr['message'];
+                }
+            } else {
+                if($_POST['post'] =='default' && $_POST['police'] =='default'){
+                    echo "<div class='alert alert-danger'>Post and police must be selected </div>";
+                } else if($_POST['post'] == 'default') echo "<div class='alert alert-danger'>Post should be selected</div>";
+                else echo "<div class='alert alert-danger'>Police should be selected</div>";
             }
         }
         ?>
@@ -85,28 +92,28 @@ $apiPolice = json_decode($apiPoliceReq, TRUE);
             <tbody>
             <?php
             foreach ($apiAssignments as $key => $obj) {
-            ?>
-            <tr>
-                <td><?= $key + 1; ?></td>
-                <td><?= $obj['police_name']; ?></td>
-                <td><?= $obj['post_name']; ?></td>
-                <td><?= $obj['weapon_serial_number']; ?></td>
-                <td><?= $obj['assigned_on']; ?></td>
-                <td><?= $obj['returned_on']; ?></td>
-                <td><?= $obj['work_date']; ?></td>
-                <td>
-                    <?php if ($obj['weapon_serial_number'] == null) { ?>
-<!--                        <a href="#assign.php?id=--><?//= $obj['id'];?><!--" class=" genric-btn primary-border" title="Edit"><span-->
-<!--                                    class="fa fa-plus-square"></span> Assign</a>-->
-                    <?php } ?>
-                    <a href="assignmentEdit.php?id=<?= $obj['id']; ?>" class="genric-btn info-border"
-                       title="Edit"><span class="fa fa-edit"></span> Edit</a>
+                ?>
+                <tr>
+                    <td><?= $key + 1; ?></td>
+                    <td><?= $obj['police_name']; ?></td>
+                    <td><?= $obj['post_name']; ?></td>
+                    <td><?= $obj['weapon_serial_number']; ?></td>
+                    <td><?= $obj['assigned_on']; ?></td>
+                    <td><?= $obj['returned_on']; ?></td>
+                    <td><?= $obj['work_date']; ?></td>
+                    <td>
+                        <?php if ($obj['weapon_serial_number'] == null) { ?>
+                            <!--                        <a href="#assign.php?id=--><? //= $obj['id'];?><!--" class=" genric-btn primary-border" title="Edit"><span-->
+                            <!--                                    class="fa fa-plus-square"></span> Assign</a>-->
+                        <?php } ?>
+                        <a href="assignmentEdit.php?id=<?= $obj['id']; ?>" class="genric-btn info-border"
+                           title="Edit"><span class="fa fa-edit"></span> Edit</a>
 
-                    <a href="#" class="genric-btn danger-border" title="Delete"><span class="fa fa-trash"></span>
-                        Delete</a>
-                </td>
-            </tr>
-            <?php
+                        <a href="api/requests/assignment.php?cate=delete&id=<?= $obj['id'] ?>" class="genric-btn danger-border" title="Delete"><span class="fa fa-trash"></span>
+                            Delete</a>
+                    </td>
+                </tr>
+                <?php
             }
             ?>
             </tbody>
@@ -131,21 +138,22 @@ $apiPolice = json_decode($apiPoliceReq, TRUE);
                                     <select name="post" class="form-control">
                                         <option value="default">Select post</option>
                                         <?php
-                                        foreach ($apiPosts as $post){
-                                        ?>
-                                        <option value="<?= $post['id']; ?>"><?= $post['name']; ?></option>
+                                        foreach ($apiPosts as $post) {
+                                            ?>
+                                            <option value="<?= $post['id']; ?>"><?= $post['name']; ?></option>
                                         <?php } ?>
                                         ?>
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label>Police ID</label>
-                                    <select class="form-control" name="police">
-                                        <?php foreach ($apiPolice as $afande){ ?>
-                                        <option value="<?= $afande['id']; ?>"><?= $afande['name']." - ".$afande['police_id']; ?></option>
+                                    <select class="form-control" name="police" id="police">
+                                        <option value="default">Select police</option>
+                                        <?php foreach ($apiPolice as $afande) { ?>
+                                            <option value="<?= $afande['id']; ?>"><?= $afande['name'] . " - " . $afande['police_id']; ?></option>
                                         <?php } ?>
                                     </select>
-<!--                                    <input class="form-control" name="police" id="police" type="text">-->
+                                    <!--                                    <input class="form-control" name="police" id="police" type="text">-->
                                 </div>
                                 <div class="form-group">
                                     <label>Workdate</label>
@@ -163,6 +171,19 @@ $apiPolice = json_decode($apiPoliceReq, TRUE);
                         Close
                     </button>
                 </div>
+                <table class="table table-bordered">
+                    <center><h3>Assignment history </h3></center>
+                    <thead>
+                    <tr>
+                        <th>#1</th>
+                        <th>Police</th>
+                        <th>Post</th>
+                        <th>Workdate</th>
+                    </tr>
+                    </thead>
+                    <tbody id="assignmentHistory">
+                    </tbody>
+                </table>
             </form>
         </div>
     </div>
@@ -207,7 +228,7 @@ $apiPolice = json_decode($apiPoliceReq, TRUE);
 <script src="./assets/js/hover-direction-snake.min.js"></script>
 
 <!-- contact js -->
-<script src="./assets/js/contact.js"></script>
+<!--<script src="./assets/js/contact.js"></script>-->
 <!--<script src="./assets/js/jquery.form.js"></script>-->
 <!--<script src="./assets/js/jquery.validate.min.js"></script>-->
 <script src="./assets/js/mail-script.js"></script>
@@ -217,6 +238,56 @@ $apiPolice = json_decode($apiPoliceReq, TRUE);
 <script src="./assets/js/plugins.js"></script>
 <script src="./assets/js/main.js"></script>
 
-</body>
-</html>
+<script>
+    $("#police").change(function () {
+        if ($(this).val() != "default"
+    )
+    {
+        loadPreviousAssignment();
+    }
+    else
+    {
+        $("#assignmentHistory").html("<tr><td colspan='4'><center><font color='brown'>Police should be selected</font></center></td></tr>");
+    }
+    })
+    ;
+
+    function ajax(url, getpars, typ, responseType, responseFunc) {
+        $.ajax({
+            url: url,
+            type: typ,
+            data: getpars,
+            dataType: responseType,
+            success: responseFunc,
+            cache: false,
+            statuscode: {
+                404: function () {
+                    alert('Response not found');
+                }
+            }
+        });
+    }
+
+    function loadPreviousAssignment() {
+        ajax('http://localhost/RUT/Methode/armory/api/requests/assignment.php?cate=bypolice&sess_id=' + $("#sessid").val() + "&police=" + $("#police").val(), null, 'GET', 'json', function (res) {
+            setLoadedAssignment(res);
+        });
+    }
+
+    function setLoadedAssignment(obj) {
+        var tableData  = "";
+        if(obj.length>0){
+        for(let i=0;i < obj.length; i++){
+            let o = obj[i];
+            tableData += "<tr><td>"+(i+1)+"</td>" +
+                            "<td>"+o.police_name+"</td>" +
+                            "<td>"+o.post_name+"</td>" +
+                            "<td>"+o.work_date.substring(0,10)+"</td></tr>";
+        }
+        $("#assignmentHistory").html(tableData);
+        } else {
+            $("#assignmentHistory").html("<tr><td colspan='4'><center>No assignment history found</center></td></tr>");
+        }
+    }
+</script>
 </html>

@@ -18,6 +18,9 @@ switch ($_SERVER['REQUEST_METHOD']) {
             case 'submit':
                 echo json_encode($assignment->submitWeapon($_POST));
                 break;
+            case 'declare':
+                echo json_encode($assignment->declareWeaponSubmissionDelay($_POST));
+                break;
 
         }
 
@@ -27,7 +30,8 @@ switch ($_SERVER['REQUEST_METHOD']) {
         switch ($_GET['cate']) {
 
             case 'delete':
-                $assignment->delete($_GET['id']);
+                $del = $assignment->delete($_GET['id']);
+                if($del['status']=='ok') header("location:".$_SERVER['HTTP_REFERER']);
                 break;
 
             case 'loadbyid':
@@ -43,11 +47,18 @@ switch ($_SERVER['REQUEST_METHOD']) {
                 // header("Content-Type:application/json");
                 echo json_encode($assignment->getByDeployer($_GET));
                 break;
+            case 'bypolice':
+                // header("Content-Type:application/json");
+                echo json_encode($assignment->getByPolice($_GET));
+                break;
 
 
             case 'load':
                 // header("Content-Type:application/json");
                 echo json_encode($assignment->get($_GET));
+                break;
+            case 'search':
+                echo json_encode($assignment->searchByPoliceKeyword($_GET));
                 break;
             case 'dashboard':
                 echo json_encode($assignment->dashboard($_GET));
@@ -64,14 +75,22 @@ switch ($_SERVER['REQUEST_METHOD']) {
             case 'notreturnedbyrange':
                 echo json_encode($assignment->getNotReturnedByRange($_GET));
                 break;
-
+            case 'returnedbydate':
+                echo json_encode($assignment->getReturnedByDate($_GET));
+                break;
+            case 'notreturnedbydate':
+                echo json_encode($assignment->getNotReturnedByDate($_GET));
+                break;
+            case 'bydate':
+                echo json_encode($assignment->getByDate($_GET));
+                break;
             default:
-                echo "value of parameter category not known";
+                echo json_encode(['error'=>"value of parameter category not known"]);
                 break;
         }
         break;
     default:
-        echo $_SERVER['REQUEST_METHOD'] . "Request method not allowed";
+        echo json_encode(['error'=>$_SERVER['REQUEST_METHOD'] . "Request method not allowed"]);
         break;
 }
 

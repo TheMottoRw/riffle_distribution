@@ -69,33 +69,29 @@ class Weapons
     // delete
     function delete($id)
     {
-        $del = $this->conn->prepare("DELETE FROM weapons where id=:i ");
+        $del = $this->conn->prepare("UPDATE weapons SET status=:stat where id=:i ");
         $del->execute(array('stat' => "deleted", 'i' => $id));
-        if ($del) {
-            echo "weapon deleted succeffully";
-        } else {
-            echo "failed to delete weapon " . json_encode($del->errorInfo());
-        }
+        return ['status'=>'ok'];
     }
 
 
     function getById($id)
     {
-        $getall = $this->conn->prepare("SELECT * from weapons where id=:i");
+        $getall = $this->conn->prepare("SELECT * from weapons where   status!='deleted' and id=:i");
         $getall->execute(array('i' => $id));
         $data = $getall->fetchAll(PDO::FETCH_ASSOC);
         return $data;
     }
 
     function getBySerial($serial){
-        $getall = $this->conn->prepare("SELECT * from weapons where serial_number=:serial");
+        $getall = $this->conn->prepare("SELECT * from weapons where   status!='deleted' and serial_number=:serial");
         $getall->execute(array("serial"=>$serial));
         $data = $getall->fetchAll(PDO::FETCH_ASSOC);
         return $data;
     }
     function getByType($arr){
         $type = $arr['type'];
-        $getall = $this->conn->prepare("SELECT * from weapons where type=:type");
+        $getall = $this->conn->prepare("SELECT * from weapons where   status!='deleted' and type=:type");
         $getall->execute(array("type"=>$type));
         $data = $getall->fetchAll(PDO::FETCH_ASSOC);
         return $data;
@@ -103,7 +99,7 @@ class Weapons
 
     function get($arr)
     {
-        $getall = $this->conn->prepare("SELECT * from weapons");
+        $getall = $this->conn->prepare("SELECT * from weapons where   status!='deleted'");
         $getall->execute();
         $data = $getall->fetchAll(PDO::FETCH_ASSOC);
         return $data;

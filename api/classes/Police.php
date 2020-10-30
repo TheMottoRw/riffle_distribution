@@ -72,16 +72,17 @@ class Police
     {
         $feed = ['status' => 'ok', 'message' => "<div class='alert alert-success'>Police deployment done sucessful</div>"];
         $deployment = $arr['district'];
+        $comment = $arr['comment'];
         $id = $arr['id'];
         //validating
         $validationStatus = $this->validate->isEmpty(['Deployment'=>$deployment]);
         if($validationStatus['status']) return $feed = ['status'=>'fail','message'=>"<div class='alert alert-danger'>".$validationStatus['message']."</div>"];
         //end validation
 
-        $upd = $this->conn->prepare("UPDATE police set deployment=:district where id=:i ");
-        $upd->execute(array( 'district' => $deployment, 'i' => $id));
+        $upd = $this->conn->prepare("UPDATE police set deployment=:district,comment=:comment where id=:i ");
+        $upd->execute(array( 'district' => $deployment, 'i' => $id,"comment"=>$comment));
 
-        if ($upd->rowCount() == 0) $feed = ['status' => 'fail', 'message' => "<div class='alert alert-danger'>Failed to deploy police account</div>"];
+        if ($upd->rowCount() == 0) $feed = ['status' => 'fail', 'message' => "<div class='alert alert-danger'>Failed to deploy police account ".json_encode($upd->errorInfo())."</div>"];
         return $feed;
     }
 
@@ -90,7 +91,7 @@ class Police
     {
         $id = $arr['id'];
         $feed = ['status' => 'ok', 'message' => "<div class='alert alert-success'>Police account created sucessful</div>"];
-        $del = $this->conn->prepare("DELETE FROM police where id=:i ");
+        $del = $this->conn->prepare("UPDATE police SET delete_status=:stat where id=:i ");
         $del->execute(array('stat' => "deleted", 'i' => $id));
         if (!$del)
             $feed = ['status' => 'fail', 'message' => "<div class='alert alert-danger'>Failed to delete police account</div>"];
@@ -100,8 +101,17 @@ class Police
     function getById($arr)
     {
         $id = $arr['id'];
-        $getall = $this->conn->prepare("SELECT * from police where id=:i");
+        $getall = $this->conn->prepare("SELECT * from police where  delete_status!='deleted' and id=:i");
         $getall->execute(array('i' => $id));
+        $data = $getall->fetchAll(PDO::FETCH_ASSOC);
+        return $data;
+    }
+
+    function search($arr)
+    {
+        $keyword = $arr['keyword'];
+        $getall = $this->conn->prepare("SELECT * from police where   delete_status!='deleted' and name LIKE  '%".$keyword."%' OR phone LIKE  '%".$keyword."%' OR police_id LIKE '%".$keyword."%'");
+        $getall->execute();
         $data = $getall->fetchAll(PDO::FETCH_ASSOC);
         return $data;
     }
@@ -109,7 +119,7 @@ class Police
     // fetch or retrieve 
     function getByPoliceId($id)
     {
-        $getall = $this->conn->prepare("SELECT * from police where police_id=:i");
+        $getall = $this->conn->prepare("SELECT * from police where   delete_status!='deleted' and police_id=:i");
         $getall->execute(array('i' => $id));
         $data = $getall->fetchAll(PDO::FETCH_ASSOC);
         return $data;
@@ -118,7 +128,7 @@ class Police
     function getByDeployment($arr)
     {
         $deployment = $arr['deployment'];
-        $getall = $this->conn->prepare("SELECT * from police WHERE deployment=:cate");
+        $getall = $this->conn->prepare("SELECT * from police WHERE   delete_status!='deleted' and deployment=:cate");
         $getall->execute(['cate'=>$deployment]);
         $data = $getall->fetchAll(PDO::FETCH_ASSOC);
         return $data;
@@ -127,7 +137,7 @@ class Police
     function getByReadyForDeployment($arr)
     {
         $deployment = $arr['deployment'];
-        $getall = $this->conn->prepare("SELECT * from police WHERE deployment=:status");
+        $getall = $this->conn->prepare("SELECT * from police WHERE   delete_status!='deleted' and deployment=:status");
         $getall->execute(['status'=>'Ready']);
         $data = $getall->fetchAll(PDO::FETCH_ASSOC);
         return $data;
@@ -135,7 +145,7 @@ class Police
 
     function get()
     {
-        $getall = $this->conn->prepare("SELECT * from police");
+        $getall = $this->conn->prepare("SELECT * from police  where delete_status!='deleted'");
         $getall->execute();
         $data = $getall->fetchAll(PDO::FETCH_ASSOC);
         return $data;

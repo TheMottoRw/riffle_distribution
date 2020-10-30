@@ -58,7 +58,7 @@ include_once "includes/" . $headers; ?>
 <main><br><br><br><br><br><br>
     <div class="row">
         <div class="col-lg-4 offset-4">
-            <form class="form-contact contact_form" action="<?= $_SERVER['PHP_SELF']; ?>" method="post" id="contactForm"
+            <form class="form-contact contact_form" action="<?= $_SERVER['PHP_SELF']; ?>" method="POST" id="contactForm"
                   novalidate="novalidate">
                 <div class="row">
                     <h1>Deploy police</h1>
@@ -66,10 +66,17 @@ include_once "includes/" . $headers; ?>
                     <div class="col-12">
                         <?php
                         if (isset($_POST['btnDeploy'])) {
+//                            echo ($_POST['district']=="Not Ready"?"Yes":"Bad")." == ";
+                            $isCommentInvalid = $_POST['district'] == "Not Ready" && empty(trim($_POST['comment']))?true:is_null(trim($_POST['comment']))?true:false;
+                            if($isCommentInvalid){
+                                echo "<div class='alert alert-danger'>Reason s/he not ready should be provided </div>";
+                            } else {
                             $postData = array_merge(['cate' => 'deploy'], $_GET, $_POST, $_SESSION);
+//                                echo json_encode($postData);
                             $resp = curlPostRequest('police.php', $postData);
                             $respArr = json_decode($resp, TRUE);
                             echo $respArr['message'];
+                            }
                         }
                         ?>
                         <div class="form-group">
@@ -79,11 +86,17 @@ include_once "includes/" . $headers; ?>
                         </div>
                         <div class="form-group">
                             <label>Deployment status</label><br>
-                            <select class="form-control valid" name="district">
+                            <select class="form-control valid" name="district" id="district">
                                 <option <?= $policeObj['deployment'] == "Ready" ? "selected" : ""; ?>>Ready</option>
                                 <option <?= $policeObj['deployment'] == "Not Ready" ? "selected" : ""; ?>>Not Ready
                                 </option>
                             </select>
+                        </div>
+                        <div class="form-group" id="commentForm" style="display: <?= $policeObj['deployment'] == 'Ready'? 'none':'block'; ?>">
+                            <label>Reason why s/he is not ready</label><br>
+                            <textarea class="form-control valid" id="comment" name="comment" rows="5">
+                                <?= $policeObj['comment'];?>
+                            </textarea>
                         </div>
                     </div>
                     <div class="form-group mt-3">
@@ -141,5 +154,10 @@ include_once "includes/" . $headers; ?>
 <!-- Jquery Plugins, main Jquery -->
 <script src="./assets/js/plugins.js"></script>
 <script src="./assets/js/main.js"></script>
-
+<script>
+    $("#district").change(function(){
+        if($(this).val() == 'Not Ready') $("#commentForm").show();
+        else  $("#commentForm").hide();
+    })
+</script>
 </html>

@@ -72,7 +72,8 @@ $apiWeapon = json_decode($apiWeaponReq, TRUE);
                     <td><?= $obj['serial_number']; ?></td>
                     <td>
                             <a href="weaponsEdit.php?id=<?= $obj['id']; ?>" class="genric-btn primary-border" title="Approve"><span class="fa fa-ok"></span> Edit</a>
-                            <a href="#" class="genric-btn danger-border" title="Reject"><span class="fa fa-trash"></span>
+                            <a href="printqrcode.php?data=<?= $obj['serial_number']; ?>" target="_blank" class="genric-btn primary-border" title="Printer"><span class="fa fa-ok"></span> Print QR Code</a>
+                            <a href="api/requests/weapons.php?cate=delete&id=<?= $obj['id']; ?>" class="genric-btn danger-border" title="Reject"><span class="fa fa-trash"></span>
                                 Delete</a>
                     </td>
                 </tr>

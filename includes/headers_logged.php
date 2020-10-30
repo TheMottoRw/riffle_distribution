@@ -18,15 +18,15 @@
                                 <li><a href="dashboard.php">Home</a></li>
                                 <li><a href="posts.php">Posts</a></li>
                                 <li><a href="assignment.php">Assignment</a></li>
+                                <li><a href="requests.php">Request</a></li>
                                 <li><a href="returned_reports.php">Returned Weapon</a></li>
                                 <li><a href="nonreturned_report.php">Non-Returned </a></li>
+                                <li><a href="standard_reports.php">Work locations </a></li>
+                                <li><a href="signout.php">Signout </a></li>
+
                                 <!--                                <li><a href="routine.php">Routine</a></li>-->
                             </ul>
                         </nav>
-                    </div>
-                    <!-- Header-btn -->
-                    <div class="header-btns d-none d-lg-block f-right">
-                        <a href="signout.php" class="btn">Sign Out (<?= $_SESSION['sess_name'];?>)</a>
                     </div>
                     <!-- Mobile Menu -->
                     <div class="col-12">
@@ -38,3 +38,4 @@
     </div>
     <!-- Header End -->
 </header>
+<?php validateSession(["Deployer"]); ?>

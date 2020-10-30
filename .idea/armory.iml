@@ -4,5 +4,12 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="phpqrcode" />
+    <orderEntry type="module" module-name="quickdata" />
+    <orderEntry type="module" module-name="quickdata" />
+    <orderEntry type="module" module-name="izipark" />
+    <orderEntry type="module" module-name="sosoma_crms" />
+    <orderEntry type="module" module-name="Laravel" />
+    <orderEntry type="module" module-name="parking" />
   </component>
 </module>

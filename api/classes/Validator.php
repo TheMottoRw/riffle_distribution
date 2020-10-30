@@ -9,8 +9,14 @@ class Validator
         return ['status'=>false,"message"=>"valid"];
     }
     function allowed($str,$arr){
-        if(!in_array($str,$arr)) return ['status'=>false,'message'=>'Invalid selection '.$str];
+        if(!in_array($str,$arr)) return ['status'=>false,'message'=>"<div class='alert alert-danger'>Invalid selection ".$str."</div>"];
         return ['status'=>true,"message"=>'valid'];
+    }
+    function policeId($id){
+        if(is_numeric($id)){
+            if(strlen($id) !=5 ) return ['status'=>false,"message"=>"<div class='alert alert-danger'>Invalid police id</div>"];
+        } else  return ['status'=>false,"message"=>"<div class='alert alert-danger'>Police id must be 5 numeric values</div>"];
+        return ['status'=>true,"message"=>"valid"];
     }
     function text($format, $str)
     {

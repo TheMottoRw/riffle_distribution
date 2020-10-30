@@ -1,16 +1,426 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="e16e9308-6ff1-4c36-ad55-91809dde9d81" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/api/classes/Requests.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/requests/requests.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/printqrcode.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requests.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/standard_reports.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/armory.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/armory.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b9be1981-cfbd-4895-af92-e5c77cd88fb9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b9be1981-cfbd-4895-af92-e5c77cd88fb9.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b9be1981-cfbd-4895-af92-e5c77cd88fb9/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b9be1981-cfbd-4895-af92-e5c77cd88fb9/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/classes/DeploymentAssignment.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/classes/DeploymentAssignment.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/classes/Police.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/classes/Police.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/classes/Posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/classes/Posts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/classes/Users.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/classes/Users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/classes/Validator.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/classes/Validator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/classes/Weapons.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/classes/Weapons.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/database/armory.sql" beforeDir="false" afterPath="$PROJECT_DIR$/api/database/armory.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/requests/assignment.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/requests/assignment.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/requests/police.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/requests/police.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/requests/posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/requests/posts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/requests/users.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/requests/users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/requests/weapons.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/requests/weapons.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_access.php" beforeDir="false" afterPath="$PROJECT_DIR$/api_access.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/animate.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/animate.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/animated-headline.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/animated-headline.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/flaticon.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/flaticon.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/fontawesome-all.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/fontawesome-all.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/gijgo.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/gijgo.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/hamburgers.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/hamburgers.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/magnific-popup.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/magnific-popup.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/nice-select.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/nice-select.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/owl.carousel.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/owl.carousel.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/price_rangs.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/price_rangs.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/progressbar_barfiller.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/progressbar_barfiller.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/responsive.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/responsive.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/slick.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/slick.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/slicknav.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/slicknav.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/style.map" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/themify-icons.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/themify-icons.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Flaticon.eot" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/Flaticon.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Flaticon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/Flaticon.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Flaticon.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/Flaticon.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Flaticon.woff" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/Flaticon.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Flaticon.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/Flaticon.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/_flaticon.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/_flaticon.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/fa-brands-400.eot" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/fa-brands-400.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/fa-brands-400.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/fa-brands-400.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/fa-brands-400.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/fa-brands-400.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/fa-brands-400.woff" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/fa-brands-400.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/fa-brands-400.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/fa-brands-400.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/fa-regular-400.eot" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/fa-regular-400.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/fa-regular-400.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/fa-regular-400.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/fa-regular-400.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/fa-regular-400.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/fa-regular-400.woff" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/fa-regular-400.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/fa-regular-400.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/fa-regular-400.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/fa-solid-900.eot" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/fa-solid-900.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/fa-solid-900.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/fa-solid-900.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/fa-solid-900.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/fa-solid-900.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/fa-solid-900.woff" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/fa-solid-900.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/fa-solid-900.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/fa-solid-900.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/flaticon.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/flaticon.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/flaticon.html" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/flaticon.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/gijgo-material.eot" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/gijgo-material.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/gijgo-material.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/gijgo-material.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/gijgo-material.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/gijgo-material.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/gijgo-material.woff" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/gijgo-material.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/themify.eot" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/themify.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/themify.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/themify.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/themify.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/themify.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/themify.woff" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/themify.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/construction.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/construction.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/elements/a.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/elements/a.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/elements/a2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/elements/a2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/elements/d.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/elements/d.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/elements/disabled-check.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/elements/disabled-check.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/elements/disabled-radio.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/elements/disabled-radio.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/elements/f1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/elements/f1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/elements/f2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/elements/f2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/elements/f3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/elements/f3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/elements/f4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/elements/f4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/elements/f5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/elements/f5.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/elements/f6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/elements/f6.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/elements/f7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/elements/f7.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/elements/f8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/elements/f8.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/elements/g1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/elements/g1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/elements/g2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/elements/g2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/elements/g3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/elements/g3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/elements/g4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/elements/g4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/elements/g5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/elements/g5.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/elements/g6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/elements/g6.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/elements/g7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/elements/g7.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/elements/g8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/elements/g8.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/elements/primary-check.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/elements/primary-check.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/elements/primary-radio.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/elements/primary-radio.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/elements/success-check.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/elements/success-check.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/elements/success-radio.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/elements/success-radio.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/gallery/about-shape.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/gallery/about-shape.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/gallery/about1.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/gallery/about1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/gallery/about2.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/gallery/about2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/gallery/brand1.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/gallery/brand1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/gallery/brand2.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/gallery/brand2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/gallery/brand3.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/gallery/brand3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/gallery/brand4.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/gallery/brand4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/gallery/brand5.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/gallery/brand5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/gallery/brand6.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/gallery/brand6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/gallery/footer_bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/gallery/footer_bg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/gallery/form.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/gallery/form.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/gallery/h1_hero.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/gallery/h1_hero.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/gallery/heor_shape.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/gallery/heor_shape.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/gallery/home-blog1.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/gallery/home-blog1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/gallery/home-blog2.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/gallery/home-blog2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/gallery/home-blog3.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/gallery/home-blog3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/gallery/popular-itmes.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/gallery/popular-itmes.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/gallery/popular-itmes01.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/gallery/popular-itmes01.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/gallery/popular-itmes02.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/gallery/popular-itmes02.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/gallery/popular-itmes03.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/gallery/popular-itmes03.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/gallery/popular-itmes04.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/gallery/popular-itmes04.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/gallery/popular-itmes05.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/gallery/popular-itmes05.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/gallery/popular-itmes06.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/gallery/popular-itmes06.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/gallery/popular-itmes2.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/gallery/popular-itmes2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/gallery/popular1.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/gallery/popular1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/gallery/price1.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/gallery/price1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/gallery/price2.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/gallery/price2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/gallery/price3.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/gallery/price3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/gallery/right-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/gallery/right-icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/gallery/section_bg01.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/gallery/section_bg01.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/gallery/section_bg02.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/gallery/section_bg02.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/gallery/section_bg03.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/gallery/section_bg03.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/gallery/section_bg04.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/gallery/section_bg04.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/gallery/shape2.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/gallery/shape2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/gallery/team1.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/gallery/team1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/gallery/team2.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/gallery/team2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/gallery/team3.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/gallery/team3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/gallery/testi-logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/gallery/testi-logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/gallery/testimonial.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/gallery/testimonial.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/hero/h1_hero.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/hero/h1_hero.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/hero/hero2.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/hero/hero2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/logo/RNP_LOGO.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/logo/RNP_LOGO.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/logo/laoder.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/logo/laoder.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/logo/loder.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/logo/loder.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/logo/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/logo/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/logo/logo2_footer.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/logo/logo2_footer.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/animated.headline.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/animated.headline.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/contact.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/gijgo.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/gijgo.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/hover-direction-snake.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/hover-direction-snake.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/jquery.ajaxchimp.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/jquery.ajaxchimp.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/jquery.barfiller.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/jquery.barfiller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/jquery.countdown.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/jquery.countdown.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/jquery.counterup.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/jquery.counterup.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/jquery.form.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/jquery.form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/jquery.magnific-popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/jquery.magnific-popup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/jquery.nice-select.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/jquery.nice-select.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/jquery.paroller.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/jquery.paroller.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/jquery.slicknav.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/jquery.slicknav.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/jquery.sticky.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/jquery.sticky.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/jquery.validate.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/jquery.validate.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/mail-script.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/mail-script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/one-page-nav-min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/one-page-nav-min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/owl.carousel.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/owl.carousel.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/plugins.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/plugins.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/popper.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/popper.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/price-range.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/price-range.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/slick.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/slick.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/vendor/jquery-1.12.4.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/vendor/jquery-1.12.4.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/vendor/modernizr-3.5.0.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/vendor/modernizr-3.5.0.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/waypoints.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/waypoints.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/wow.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/wow.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/_about.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/_about.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/_ask-question.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/_ask-question.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/_blog_page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/_blog_page.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/_bradcam.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/_bradcam.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/_color.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/_color.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/_common.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/_common.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/_contact.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/_contact.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/_elements.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/_elements.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/_extend.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/_extend.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/_footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/_footer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/_h1-hero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/_h1-hero.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/_headerMenu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/_headerMenu.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/_load-balnceing.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/_load-balnceing.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/_mixins.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/_overlay.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/_overlay.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/_pagination.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/_pagination.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/_pricing.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/_pricing.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/_services.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/_services.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/_services_section.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/_services_section.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/_support-area.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/_support-area.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/_team.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/_team.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/_testimonial.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/_testimonial.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/_want-wark.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/_want-wark.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/bootstrap/css/bootstrap-grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/bootstrap/css/bootstrap-grid.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/bootstrap/css/bootstrap-grid.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/bootstrap/css/bootstrap-grid.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/bootstrap/css/bootstrap-reboot.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/bootstrap/css/bootstrap-reboot.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/bootstrap/css/bootstrap-reboot.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/bootstrap/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/bootstrap/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/bootstrap/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/bootstrap/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/bootstrap/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/bootstrap/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/bootstrap/js/bootstrap.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/bootstrap/js/bootstrap.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/bootstrap/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/bootstrap/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/bootstrap/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/bootstrap/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/bootstrap/js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/chart.js/Chart.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/chart.js/Chart.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/chart.js/Chart.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/chart.js/Chart.bundle.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/chart.js/Chart.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/chart.js/Chart.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/chart.js/Chart.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/chart.js/Chart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/chart.js/Chart.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/chart.js/Chart.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/chart.js/Chart.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/chart.js/Chart.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/font-awesome/HELP-US-OUT.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/font-awesome/HELP-US-OUT.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/font-awesome/css/font-awesome.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/font-awesome/css/font-awesome.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/font-awesome/css/font-awesome.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/font-awesome/css/font-awesome.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/font-awesome/fonts/FontAwesome.otf" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/font-awesome/fonts/FontAwesome.otf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/font-awesome/fonts/fontawesome-webfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/font-awesome/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/font-awesome/fonts/fontawesome-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/font-awesome/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/font-awesome/fonts/fontawesome-webfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/font-awesome/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/font-awesome/fonts/fontawesome-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/font-awesome/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/font-awesome/fonts/fontawesome-webfont.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/font-awesome/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/additional-methods.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/additional-methods.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/additional-methods.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/additional-methods.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/jquery.validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/jquery.validate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/jquery.validate.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/jquery.validate.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_ar.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_ar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_ar.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_ar.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_az.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_az.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_az.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_az.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_bg.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_bg.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_bg.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_bg.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_bn_BD.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_bn_BD.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_bn_BD.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_bn_BD.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_ca.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_ca.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_ca.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_ca.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_cs.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_cs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_cs.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_cs.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_da.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_da.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_da.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_da.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_de.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_de.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_de.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_de.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_el.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_el.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_el.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_el.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_es.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_es.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_es.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_es.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_es_AR.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_es_AR.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_es_AR.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_es_AR.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_es_PE.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_es_PE.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_es_PE.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_es_PE.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_et.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_et.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_et.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_et.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_eu.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_eu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_eu.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_eu.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_fa.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_fa.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_fa.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_fa.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_fi.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_fi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_fi.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_fi.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_fr.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_fr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_fr.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_fr.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_ge.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_ge.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_ge.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_ge.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_gl.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_gl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_gl.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_gl.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_he.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_he.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_he.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_he.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_hr.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_hr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_hr.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_hr.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_hu.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_hu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_hu.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_hu.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_hy_AM.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_hy_AM.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_hy_AM.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_hy_AM.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_id.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_id.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_id.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_id.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_is.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_is.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_is.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_is.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_it.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_it.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_it.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_it.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_ja.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_ja.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_ja.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_ja.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_ka.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_ka.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_ka.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_ka.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_kk.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_kk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_kk.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_kk.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_ko.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_ko.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_ko.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_ko.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_lt.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_lt.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_lt.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_lt.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_lv.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_lv.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_lv.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_lv.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_mk.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_mk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_mk.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_mk.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_my.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_my.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_my.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_my.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_nl.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_nl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_nl.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_nl.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_no.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_no.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_no.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_no.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_pl.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_pl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_pl.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_pl.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_pt_BR.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_pt_BR.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_pt_BR.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_pt_BR.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_pt_PT.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_pt_PT.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_pt_PT.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_pt_PT.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_ro.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_ro.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_ro.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_ro.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_ru.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_ru.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_ru.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_ru.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_sd.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_sd.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_sd.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_sd.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_si.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_si.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_si.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_si.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_sk.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_sk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_sk.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_sk.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_sl.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_sl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_sl.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_sl.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_sr.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_sr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_sr.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_sr.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_sr_lat.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_sr_lat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_sr_lat.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_sr_lat.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_sv.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_sv.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_sv.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_sv.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_th.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_th.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_th.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_th.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_tj.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_tj.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_tj.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_tj.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_tr.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_tr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_tr.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_tr.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_uk.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_uk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_uk.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_uk.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_ur.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_ur.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_ur.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_ur.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_vi.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_vi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_vi.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_vi.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_zh.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_zh.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_zh.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_zh.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_zh_TW.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_zh_TW.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_zh_TW.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/messages_zh_TW.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/methods_de.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/methods_de.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/methods_de.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/methods_de.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/methods_es_CL.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/methods_es_CL.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/methods_es_CL.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/methods_es_CL.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/methods_fi.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/methods_fi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/methods_fi.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/methods_fi.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/methods_it.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/methods_it.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/methods_it.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/methods_it.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/methods_nl.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/methods_nl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/methods_nl.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/methods_nl.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/methods_pt.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/methods_pt.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/methods_pt.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery-validation/localization/methods_pt.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery.cookie/MIT-LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery.cookie/MIT-LICENSE.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery.cookie/component.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery.cookie/component.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery.cookie/cookie.jquery.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery.cookie/cookie.jquery.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery.cookie/jquery.cookie.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery.cookie/jquery.cookie.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery/core.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery/core.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery/jquery.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery/jquery.slim.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery/jquery.slim.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/jquery/jquery.slim.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/jquery/jquery.slim.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/popper.js/esm/popper-utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/popper.js/esm/popper-utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/popper.js/esm/popper-utils.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/popper.js/esm/popper-utils.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/popper.js/esm/popper.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/popper.js/esm/popper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/popper.js/esm/popper.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/popper.js/esm/popper.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/popper.js/popper-utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/popper.js/popper-utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/popper.js/popper-utils.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/popper.js/popper-utils.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/popper.js/popper.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/popper.js/popper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/popper.js/popper.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/popper.js/popper.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/popper.js/umd/popper-utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/popper.js/umd/popper-utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/popper.js/umd/popper-utils.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/popper.js/umd/popper-utils.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/popper.js/umd/popper.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/popper.js/umd/popper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/popper.js/umd/popper.js.flow" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/popper.js/umd/popper.js.flow" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/popper.js/umd/popper.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/popper.js/umd/popper.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assignment.php" beforeDir="false" afterPath="$PROJECT_DIR$/assignment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignmentEdit.php" beforeDir="false" afterPath="$PROJECT_DIR$/assignmentEdit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contact_process.php" beforeDir="false" afterPath="$PROJECT_DIR$/contact_process.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gantt.php" beforeDir="false" afterPath="$PROJECT_DIR$/gantt.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/header_admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/header_admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/header_landing.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/header_landing.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/headers_logged.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/headers_logged.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nonreturned_report.php" beforeDir="false" afterPath="$PROJECT_DIR$/nonreturned_report.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/police.php" beforeDir="false" afterPath="$PROJECT_DIR$/police.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/policeDeploy.php" beforeDir="false" afterPath="$PROJECT_DIR$/policeDeploy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/policeEdit.php" beforeDir="false" afterPath="$PROJECT_DIR$/policeEdit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/posts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postsEdit.php" beforeDir="false" afterPath="$PROJECT_DIR$/postsEdit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/returned_reports.php" beforeDir="false" afterPath="$PROJECT_DIR$/returned_reports.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signin.php" beforeDir="false" afterPath="$PROJECT_DIR$/signin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signout.php" beforeDir="false" afterPath="$PROJECT_DIR$/signout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users.php" beforeDir="false" afterPath="$PROJECT_DIR$/users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usersEdit.php" beforeDir="false" afterPath="$PROJECT_DIR$/usersEdit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapons.php" beforeDir="false" afterPath="$PROJECT_DIR$/weapons.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weaponsEdit.php" beforeDir="false" afterPath="$PROJECT_DIR$/weaponsEdit.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,8 +443,20 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../parking/building/building/manager" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../../../parking/building/building/manager" />
+      <recent name="$PROJECT_DIR$/../../sosoma_crms/resources/views/dashboard/orders/report" />
+      <recent name="$PROJECT_DIR$/../../viya" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -50,14 +472,63 @@
       <workItem from="1599314019594" duration="4654000" />
       <workItem from="1599387473680" duration="2982000" />
       <workItem from="1599463477289" duration="6560000" />
-      <workItem from="1599542409450" duration="2375000" />
+      <workItem from="1599542409450" duration="2918000" />
+      <workItem from="1599632446219" duration="7530000" />
+      <workItem from="1599644285400" duration="616000" />
+      <workItem from="1599655541833" duration="598000" />
+      <workItem from="1599801058046" duration="2984000" />
+      <workItem from="1599812258318" duration="4014000" />
+      <workItem from="1599820058023" duration="16585000" />
+      <workItem from="1600510187342" duration="74000" />
+      <workItem from="1600793618692" duration="171000" />
+      <workItem from="1601543617969" duration="3600000" />
+      <workItem from="1601722008607" duration="5194000" />
+      <workItem from="1601730001004" duration="2918000" />
+      <workItem from="1601990105381" duration="14023000" />
+      <workItem from="1602057565336" duration="26361000" />
+      <workItem from="1602174090508" duration="4675000" />
+      <workItem from="1602255000717" duration="3340000" />
+      <workItem from="1602334997549" duration="15529000" />
+      <workItem from="1602352758729" duration="926000" />
+      <workItem from="1602398419473" duration="14369000" />
+      <workItem from="1602426588800" duration="4681000" />
+      <workItem from="1602577603875" duration="13260000" />
+      <workItem from="1602594960800" duration="5871000" />
+      <workItem from="1602619608626" duration="7984000" />
+      <workItem from="1602658722793" duration="13529000" />
+      <workItem from="1602835345701" duration="8743000" />
+      <workItem from="1603177049286" duration="1361000" />
+      <workItem from="1603269043182" duration="1255000" />
+      <workItem from="1603348665190" duration="1731000" />
+      <workItem from="1603696851759" duration="9688000" />
+      <workItem from="1603710722803" duration="1246000" />
+      <workItem from="1603729526090" duration="7285000" />
+      <workItem from="1603779768151" duration="8132000" />
+      <workItem from="1603804215149" duration="1208000" />
+      <workItem from="1604045734547" duration="5756000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="1029" y="688" width="778" height="367" key="#Notifications" timestamp="1602353082710">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="1029" y="688" width="778" height="367" key="#Notifications/72.27.1848.1053@72.27.1848.1053" timestamp="1602353082710" />
     <state x="591" y="215" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599211865635">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
@@ -66,37 +537,61 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="72" y="27" width="1828" height="1053" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1599214398391" />
-    <state width="1240" height="225" key="GridCell.Tab.0.bottom" timestamp="1599468689332">
+    <state x="729" y="302" width="524" height="510" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601990413940">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1240" height="225" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1599468689332" />
-    <state width="1240" height="225" key="GridCell.Tab.0.center" timestamp="1599468689331">
+    <state x="729" y="302" width="524" height="510" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1601990413940" />
+    <state x="729" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603702921359">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1240" height="225" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1599468689331" />
-    <state width="1240" height="225" key="GridCell.Tab.0.left" timestamp="1599468689330">
+    <state x="729" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1603702921359" />
+    <state x="778" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1603706266933">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1240" height="225" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1599468689330" />
-    <state width="1240" height="225" key="GridCell.Tab.0.right" timestamp="1599468689331">
+    <state x="778" y="311" width="424" height="491" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1603706266933" />
+    <state width="1240" height="348" key="GridCell.Tab.0.bottom" timestamp="1604053645646">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1240" height="225" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1599468689331" />
-    <state x="720" y="268" width="542" height="578" key="NewPhpClassDialog" timestamp="1599387840143">
+    <state width="1240" height="348" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1604053645646" />
+    <state width="1240" height="348" key="GridCell.Tab.0.center" timestamp="1604053645645">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="720" y="268" width="542" height="578" key="NewPhpClassDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1599387840143" />
-    <state x="789" y="478" width="404" height="158" key="NewPhpFileDialog" timestamp="1599464997311">
+    <state width="1240" height="348" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1604053645645" />
+    <state width="1240" height="348" key="GridCell.Tab.0.left" timestamp="1604053645645">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="789" y="478" width="404" height="158" key="NewPhpFileDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1599464997311" />
-    <state x="674" y="142" width="643" height="822" key="find.popup" timestamp="1599468110561">
+    <state width="1240" height="348" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1604053645645" />
+    <state width="1240" height="348" key="GridCell.Tab.0.right" timestamp="1604053645646">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="674" y="142" width="643" height="822" key="find.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1599468110561" />
-    <state x="659" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1599306650950">
+    <state width="1240" height="348" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1604053645646" />
+    <state x="720" y="268" width="542" height="578" key="NewPhpClassDialog" timestamp="1602008990766">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="659" y="259" width="672" height="678" key="search.everywhere.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1599306650950" />
+    <state x="720" y="268" width="542" height="578" key="NewPhpClassDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1602008990766" />
+    <state x="789" y="478" width="404" height="158" key="NewPhpFileDialog" timestamp="1602010773266">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="789" y="478" width="404" height="158" key="NewPhpFileDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1602010773266" />
+    <state x="891" y="496" width="199" height="128" key="com.intellij.database.run.ParametersPanel.Standalone" timestamp="1602672105431">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="891" y="496" width="199" height="128" key="com.intellij.database.run.ParametersPanel.Standalone/72.27.1848.1053@72.27.1848.1053" timestamp="1602672105431" />
+    <state x="670" y="244" width="641" height="626" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1601990118511">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="670" y="244" width="641" height="626" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/72.27.1848.1053@72.27.1848.1053" timestamp="1601990118511" />
+    <state x="741" y="143" width="868" height="822" key="find.popup" timestamp="1603782431150">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="741" y="143" width="868" height="822" key="find.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1603782431150" />
+    <state x="660" y="252" key="run.anything.popup" timestamp="1603706453470">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="660" y="252" key="run.anything.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1603706453470" />
+    <state x="659" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1604047056013">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="659" y="259" width="672" height="678" key="search.everywhere.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1604047056013" />
   </component>
 </project>

@@ -86,13 +86,13 @@ include_once "includes/".$headers; ?>
                     <td><?= $obj['phone']; ?></td>
                     <td><?= $obj['police_id']; ?></td>
                     <td><?= $obj['ranks']; ?></td>
-                    <td><?= $obj['deployment']; ?></td>
+                    <td><?= $obj['deployment'].($obj['deployment']=='Not Ready'?"<br>[".$obj['comment']."]":""); ?></td>
                     <td>
                         <a href="policeDeploy.php?id=<?= $obj['id']; ?>" class="genric-btn bg-secondary"
                            title="Police deployment">Change Status</a>
                         <a href="policeEdit.php?id=<?= $obj['id']; ?>" class="genric-btn primary-border"
                            title="Police edit">Edit</a>
-                        <a href="#api/requests/police.php?cate=delete&id=<?= $obj['id']; ?>"
+                        <a href="api/requests/police.php?cate=delete&id=<?= $obj['id']; ?>"
                            class="genric-btn danger-border" title="Delete">Delete</a>
                     </td>
                 </tr>
@@ -136,7 +136,7 @@ include_once "includes/".$headers; ?>
                                 </div>
                                 <div class="form-group">
 <!--                                    <label>Deployment</label>-->
-                                    <input class="form-control" name="district" id="district" type="hidden">
+                                    <input class="form-control" name="district" id="district" type="hidden" value="Ready">
                                 </div>
                                 <div class="form-group">
                                     <label>Password</label>
@@ -207,6 +207,4 @@ include_once "includes/".$headers; ?>
 <script src="./assets/js/plugins.js"></script>
 <script src="./assets/js/main.js"></script>
 
-</body>
-</html>
 </html>

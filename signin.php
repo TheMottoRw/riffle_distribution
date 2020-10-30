@@ -60,7 +60,7 @@ include_once "api_access.php";
                                 //redirect
                                 if($_SESSION['sess_category'] == 'Superadmin') header("location:users.php");
                                 elseif($_SESSION['sess_category'] == 'Deployer') header("location:posts.php");
-                                elseif($_SESSION['sess_category'] == 'police') echo"<div class='alert alert-success'>Police login success</div>";
+                                elseif($_SESSION['sess_category'] == 'Police') echo"<div class='alert alert-danger'>Access denied</div>";
                             }else{
                                 echo $respArr['message'];
                             }

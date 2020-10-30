@@ -18,6 +18,9 @@
                                 <li><a href="users.php">Users</a></li>
                                 <li><a href="police.php">Police</a></li>
                                 <li><a href="weapons.php">Weapons</a></li>
+                                <li><a href="returned_reports.php">Returned</a></li>
+                                <li><a href="nonreturned_report.php">Non Returned</a></li>
+                                <li><a href="standard_reports.php">Work locations</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -35,3 +38,4 @@
     </div>
     <!-- Header End -->
 </header>
+<?php validateSession(["Superadmin"]); ?>

@@ -49,7 +49,7 @@ if(count($apiWeapon)>0) $weaponObj = $apiWeapon[0];
     </div>
 </div>
 <!-- Preloader Start -->
-<?php include_once "includes/headers_logged.php";?>
+<?php include_once "includes/header_admin.php";?>
 <main><br><br><br><br><br><br>
     <div class="row">
         <div class="col-lg-4 offset-4">

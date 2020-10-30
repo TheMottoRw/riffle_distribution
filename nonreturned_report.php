@@ -2,9 +2,9 @@
 session_start();
 include_once "api_access.php";
 if (isset($_SESSION['edit_id'])) unset($_SESSION['edit_id']);
-$apiPoliceReq = curlGetRequest("assignment.php?cate=load&" . sessionsToGetParams());
+$apiPoliceReq = curlGetRequest("assignment.php?cate=notreturned&" . sessionsToGetParams());
 if(isset($_GET['from']) && isset($_GET['to'])){
-    $apiPoliceReq = curlGetRequest("assignment.php?cate=notreturnedbyrange&sess_id=3&from=".$_GET['from']."&to=".$_GET['to']."&" . sessionsToGetParams());
+    $apiPoliceReq = curlGetRequest("assignment.php?cate=notreturnedbyrange&sess_id=".$_SESSION['sess_id']."&from=".$_GET['from']."&to=".$_GET['to']."&" . sessionsToGetParams());
 }
 $apiPolice = json_decode($apiPoliceReq, TRUE);
 ?>
@@ -50,13 +50,15 @@ $apiPolice = json_decode($apiPoliceReq, TRUE);
 <!-- Preloader Start -->
 <?php
 $headers = $_SESSION['sess_category'] == 'Superadmin' ? 'header_admin.php' : 'headers_logged.php';
-include_once "includes/headers_logged.php"; ?>
+include_once "includes/".$headers; ?>
 <main class="container" style="padding: 0% 2% 0% 2%"><br><br><br><br><br>
 
     <!-- Contact Section Heading -->
     <h2 class="text-center">Filter report </h2>
     <div class="row">
     </div>
+    <button class="genric-btn primary circle" id="print">Print</button>
+
     <div class="table-responsive">
 
         <?php
@@ -66,7 +68,9 @@ include_once "includes/headers_logged.php"; ?>
             $respArr = json_decode($resp, TRUE);
             echo $respArr['message'];
         }
+//        echo json_encode($_SESSION);
         ?>
+
         <table class="table table-hover">
             <thead>
             <form action="<?= $_SERVER['PHP_SELF']; ?>" method="GET" class="form-inline">
@@ -90,7 +94,6 @@ include_once "includes/headers_logged.php"; ?>
                 <th>Weapon</th>
                 <th>Assigned on</th>
                 <th>Returned on</th>
-                <th colspan="5">Action</th>
             </tr>
             </thead>
             <tbody>
@@ -104,12 +107,12 @@ include_once "includes/headers_logged.php"; ?>
                     <td><?= $obj['weapon_serial_number']; ?></td>
                     <td><?= $obj['assigned_on']; ?></td>
                     <td><?= $obj['returned_on']; ?></td>
-                    <td>
-                        <a href="policeEdit.php?id=<?= $obj['id']; ?>" class="genric-btn primary-border"
-                           title="Police edit">Edit</a>
-                        <a href="#api/requests/police.php?cate=delete&id=<?= $obj['id']; ?>"
-                           class="genric-btn danger-border" title="Delete">Delete</a>
-                    </td>
+<!--                    <td>-->
+<!--                        <a href="policeEdit.php?id=--><?//= $obj['id']; ?><!--" class="genric-btn primary-border"-->
+<!--                           title="Police edit">Edit</a>-->
+<!--                        <a href="#api/requests/police.php?cate=delete&id=--><?//= $obj['id']; ?><!--"-->
+<!--                           class="genric-btn danger-border" title="Delete">Delete</a>-->
+<!--                    </td>-->
                 </tr>
                 <?php
             }
@@ -219,6 +222,10 @@ include_once "includes/headers_logged.php"; ?>
 <!-- Jquery Plugins, main Jquery -->
 <script src="./assets/js/plugins.js"></script>
 <script src="./assets/js/main.js"></script>
-
+<script>
+    $("#print").click(function(){
+        window.print();
+    })
+</script>
 </body>
 </html>

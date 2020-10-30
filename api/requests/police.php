@@ -26,7 +26,8 @@ switch ($_SERVER['REQUEST_METHOD']) {
                 echo json_encode($police->get());
                 break;
             case 'delete':
-                echo json_encode($police->delete($_GET['id']));
+                $del = $police->delete($_GET);
+                if($del['status']=='ok') header("location:".$_SERVER['HTTP_REFERER']);
                 break;
 
             case 'loadbyid':
@@ -39,13 +40,16 @@ switch ($_SERVER['REQUEST_METHOD']) {
             case 'byready':
                 echo json_encode($police->getByReadyForDeployment($_GET));
                 break;
+            case 'search':
+                echo json_encode($police->search($_GET));
+                break;
             default:
-                echo "value of parameter category not known";
+                echo json_encode(['error'=>"value of parameter category not known"]);
                 break;
         }
         break;
     default:
-        echo $_SERVER['REQUEST_METHOD'] . "Request method not allowed";
+        echo json_encode(['error'=>$_SERVER['REQUEST_METHOD'] . "Request method not allowed"]);
         break;
 }
 

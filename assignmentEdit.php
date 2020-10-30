@@ -8,6 +8,8 @@ $apiPostReq = curlGetRequest("posts.php?cate=bydistrict&district=" . $_SESSION['
 $apiPosts = json_decode($apiPostReq, TRUE);
 $apiAssignmentsReq = curlGetRequest("assignment.php?cate=loadbyid&id=".$_GET['id']."&" . $_SESSION['sess_id']);
 $apiAssignments = json_decode($apiAssignmentsReq, TRUE);
+$apiPoliceReq = curlGetRequest("police.php?cate=byready&deployer=" . $_SESSION['sess_id']);
+$apiPolice = json_decode($apiPoliceReq, TRUE);
 
 $assignmentObj = '';
 if(count($apiAssignments)>0) $assignmentObj = $apiAssignments[0];
@@ -83,14 +85,38 @@ if(count($apiAssignments)>0) $assignmentObj = $apiAssignments[0];
                                 ?>
                             </select>
                         </div>
+<!--                        <div class="form-group">-->
+<!--                            <label>Police</label>-->
+<!--                            <input class="form-control" name="police" id="police" type="text" value="--><?//= $assignmentObj['police_id']; ?><!--">-->
+<!--                        </div>-->
+
                         <div class="form-group">
                             <label>Police</label>
-                            <input class="form-control" name="police" id="police" type="text" value="<?= $assignmentObj['police_id']; ?>">
+                            <select class="form-control" name="police" id="police">
+                                <option value="default">Select police</option>
+                                <?php foreach ($apiPolice as $afande) { ?>
+                                    <option value="<?= $afande['id']; ?>" <?= $apiAssignments[0]['police'] == $afande['id']?"selected":"" ?>><?= $afande['name'] . " - " . $afande['police_id']; ?></option>
+                                <?php } ?>
+                            </select>
+                            <!--                                    <input class="form-control" name="police" id="police" type="text">-->
                         </div>
                         <div class="form-group">
                             Workdate  [<?= "<b>".substr($assignmentObj['work_date'],0,10)."</b>";?>]</label>
-                            <input class="form-control" name="workdate" id="date" type="date" >
+                            <input class="form-control" name="workdate" id="workdate" type="date" >
                         </div>
+                        <table class="table table-bordered">
+                            <center><h3>Assignment history </h3></center>
+                            <thead>
+                            <tr>
+                                <th>#1</th>
+                                <th>Police</th>
+                                <th>Post</th>
+                                <th>Workdate</th>
+                            </tr>
+                            </thead>
+                            <tbody id="assignmentHistory">
+                            </tbody>
+                        </table>
                     </div>
                 </div>
                 <div class="form-group mt-3">
@@ -148,7 +174,73 @@ if(count($apiAssignments)>0) $assignmentObj = $apiAssignments[0];
 <!-- Jquery Plugins, main Jquery -->
 <script src="./assets/js/plugins.js"></script>
 <script src="./assets/js/main.js"></script>
+<script>
+    var assignmentHist = [];
+    var d = new Date();
+    $("#workdate").change(function(){
+        var selectedDate = new Date($(this).val()),
+            yesterday = selectedDate;
+        yesterday.setDate(yesterday.getDate()-1);
+        yesterday = [yesterday.getFullYear(),yesterday.getMonth()+1,yesterday.getDate()];
+        console.log(yesterday);
+        if(assignmentHist.length != null){
+         if(d.setDate($(this).val()-1) == assignmentHist[0]['work_date']){
+             console.log("Assigned to previous");
+         }else {
+             console.log(d);
+         }
+             }
+    });
+    $("#police").change(function () {
+        if ($(this).val() != "default"
+        )
+        {
+            loadPreviousAssignment();
+        }
+        else
+        {
+            $("#assignmentHistory").html("<tr><td colspan='4'><center><font color='brown'>Police should be selected</font></center></td></tr>");
+        }
+    })
+    ;
 
-</body>
-</html>
+    function ajax(url, getpars, typ, responseType, responseFunc) {
+        $.ajax({
+            url: url,
+            type: typ,
+            data: getpars,
+            dataType: responseType,
+            success: responseFunc,
+            cache: false,
+            statuscode: {
+                404: function () {
+                    alert('Response not found');
+                }
+            }
+        });
+    }
+
+    function loadPreviousAssignment() {
+        ajax('http://localhost/RUT/Methode/armory/api/requests/assignment.php?cate=bypolice&sess_id=' + $("#sessid").val() + "&police=" + $("#police").val(), null, 'GET', 'json', function (res) {
+            assignmentHist = res;
+            setLoadedAssignment(res);
+        });
+    }
+
+    function setLoadedAssignment(obj) {
+        var tableData  = "";
+        if(obj.length>0){
+            for(let i=0;i < obj.length; i++){
+                let o = obj[i];
+                tableData += "<tr><td>"+(i+1)+"</td>" +
+                    "<td>"+o.police_name+"</td>" +
+                    "<td>"+o.post_name+"</td>" +
+                    "<td>"+o.work_date.substring(0,10)+"</td></tr>";
+            }
+            $("#assignmentHistory").html(tableData);
+        } else {
+            $("#assignmentHistory").html("<tr><td colspan='4'><center>No assignment history found</center></td></tr>");
+        }
+    }
+</script>
 </html>

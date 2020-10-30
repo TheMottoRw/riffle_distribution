@@ -68,20 +68,16 @@ class Posts
     // delete
     function delete($id)
     {
-        $del = $this->conn->prepare("DELETE FROM posts where id=:i ");
+        $del = $this->conn->prepare("UPDATE FROM posts SET status=:stat  where id=:i ");
         $del->execute(array('stat' => "deleted", 'i' => $id));
-        if ($del) {
-            echo "Post deleted succeffully";
-        } else {
-            echo "failed to delete post" . json_encode($del->errorInfo());
-        }
+        return ['status'=>'ok'];
     }
 
 
     // fetch or retrieve 
     function getById($id)
     {
-        $getall = $this->conn->prepare("SELECT * from posts where id=:i");
+        $getall = $this->conn->prepare("SELECT * from posts where  status!='deleted' and id=:i");
         $getall->execute(array('i' => $id));
         $data = $getall->fetchAll(PDO::FETCH_ASSOC);
         return $data;
@@ -90,8 +86,8 @@ class Posts
     function getByDistrict($arr)
     {
         $district = $arr['district'];
-        $getall = $this->conn->prepare("SELECT * from posts where district=:district");
-        $getall->execute(['district'=>$district]);
+        $getall = $this->conn->prepare("SELECT * from posts where status!='deleted'");
+        $getall->execute();
         $data = $getall->fetchAll(PDO::FETCH_ASSOC);
         return $data;
     }

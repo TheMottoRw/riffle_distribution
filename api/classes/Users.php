@@ -45,8 +45,10 @@ class Users
         //validating
         $validationStatus = $this->validate->isEmpty(['Name'=>$name,'Phone'=>$phone,'Police Id'=>$policeId,'District'=>$dep,'Rank'=>$rank,'Password'=>$password]);
         $isLevelAllowed = $this->validate->allowed($level,['District']);
-        $isCategoryAllowed = $this->validate->allowed($category,['Superadmin','Deployer']);
+        $isCategoryAllowed = $this->validate->allowed($category,['Superadmin','Deployer','Riffle_distributor']);
+        $isPoliceIdValid = $this->validate->policeId($policeId);
         if($validationStatus['status']) return $feed = ['status'=>'fail','message'=>$validationStatus['message']];
+        if(!$isPoliceIdValid['status']) return $feed = ['status'=>'fail','message'=>"<div class='alert alert-danger'>".$validationStatus['message']."</div>"];
         if($this->validate->phone('rwandan',$phone) == 0) return $feed = ['status'=>'fail',"message"=>"<div class='alert alert-danger'>Invalid phone number</div>"];
         if(!$isLevelAllowed['status']) return $feed = ['status'=>'fail','message'=>$isLevelAllowed['message']];
         if(!$isCategoryAllowed['status']) return $feed = ['status'=>'fail','message'=>$isCategoryAllowed['message']];
@@ -82,8 +84,10 @@ class Users
         //validating
         $validationStatus = $this->validate->isEmpty(['Name'=>$name,'Phone'=>$phone,'Police Id'=>$policeId,'District'=>$dep,'Rank'=>$rank]);
         $isLevelAllowed = $this->validate->allowed($level,['District']);
-        $isCategoryAllowed = $this->validate->allowed($category,['Superadmin','Deployer']);
+        $isCategoryAllowed = $this->validate->allowed($category,['Superadmin','Deployer','Riffle_distributor']);
+        $isPoliceIdValid = $this->validate->policeId($policeId);
         if($validationStatus['status']) return $feed = ['status'=>'fail','message'=>"<div class='alert alert-danger'>".$validationStatus['message']."</div>"];
+        if(!$isPoliceIdValid['status']) return $feed = ['status'=>'fail','message'=>"<div class='alert alert-danger'>".$validationStatus['message']."</div>"];
         if($this->validate->phone('rwandan',$phone) == 0) return $feed = ['status'=>'fail',"message"=>"<div class='alert alert-danger'>Invalid phone number</div>"];
         if(!$isLevelAllowed['status']) return $feed = ['status'=>'fail','message'=>"<div class='alert alert-danger'>".$isLevelAllowed['message']."</div>"];
         if(!$isCategoryAllowed['status']) return $feed = ['status'=>'fail','message'=>"<div class='alert alert-danger'>".$isCategoryAllowed['message']."</div>"];
@@ -102,9 +106,22 @@ class Users
         $id = $arr['id'];
         $feed = ['status' => 'ok', 'message' => "<div class='alert alert-success'>User account created sucessful</div>"];
         $del = $this->conn->prepare("DELETE FROM users where id=:i ");
-        $del->execute(array('stat' => "deleted", 'i' => $id));
+        $del->execute(array('i' => $id));
         if (!$del)
             $feed = ['status' => 'fail', 'message' => "<div class='alert alert-danger'>Failed to delete user account</div>"];
+        return $feed;
+    }
+
+    // reset password
+    function resetUser($arr)
+    {
+        $id = $arr['id'];
+        if($arr['password']!=$arr['confPassword']) return ['status'=>'notmatch'];
+        $feed = ['status' => 'ok', 'message' => "<div class='alert alert-success'>User password created successful</div>"];
+        $del = $this->conn->prepare("UPDATE users SET password=:pwd where id=:i ");
+        $del->execute(array('i' => $id,'pwd'=>base64_encode($arr['password'])));
+        if (!$del)
+            $feed = ['status' => 'fail', 'message' => "<div class='alert alert-danger'>Failed to reset user password</div>"];
         return $feed;
     }
 
@@ -129,14 +146,14 @@ class Users
             //set sessions
             $feed = array('status' => "ok", 'user' => ["sess_id" => $fetch[0]['id'], "sess_name" => $fetch[0]['name'], "sess_district" => $fetch[0]['district'], "sess_level" => $fetch[0]['level'],"sess_category" => $fetch[0]['category']]);
         } else {
-            return $feed = array('status'=>'fail','message'=>"<div class='alert alert-danger'>Wrong username or password</div>");
+//            return $feed = array('status'=>'fail','message'=>"<div class='alert alert-danger'>Wrong username or password</div>");
             //not yet login of  standard police allowed
             $qy = $this->conn->prepare("SELECT * from police where phone=:n AND password=:p");
             $qy->execute(array('n' => $phone, 'p' => $password));
             if($qy->rowCount()==1){
                 $fetch = $qy->fetchAll(PDO::FETCH_ASSOC);
                 //set sessions
-                $feed = array('status' => "ok", 'user' => ["sess_id" => $fetch[0]['id'], "sess_name" => $fetch[0]['name'], "sess_district" => $fetch[0]['deployment'],"sess_category" => 'police']);
+                $feed = array('status' => "ok", 'user' => ["sess_id" => $fetch[0]['id'], "sess_name" => $fetch[0]['name'], "sess_district" => $fetch[0]['deployment'],"sess_category" => 'Police']);
             }else
                 $feed = array('status'=>'fail','message'=>"<div class='alert alert-danger'>Wrong username or password</div>");
         }

@@ -1,0 +1,24 @@
+Riffles
+----------
+
+Web - Default user registration should be Ready
+Web - Add comment of why the user is not ready(JS for onchange status)
+Web - Before assign police,retrieve assignment history and don't accept ti go back to yesterday assignment (Ajax)
+App - Giving weapon -> Search by name or police ID and choose the one to give it to
+App - Standard police -> Check assignment post by searching using police number
+
+==>USERS 2
+	-Superadmin
+	-deployment in charge
+	-Riffle distribution in charge
+	
+	Police ID Validation: 5 Numeric
+	Delete all police information
+	Add report export in pdf [POST,PID,POLICE,WORKDATE]
+	Super admin view Reports
+=>App ... list returned weapon
+=>App ... declare reason why you are late for weapon
+=> Police have account on app to view assignment
+=> Police send request
+
+PASSWORD: 19961956

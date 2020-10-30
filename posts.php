@@ -2,7 +2,7 @@
 session_start();
 include_once "api_access.php";
 if (isset($_SESSION['edit_id'])) unset($_SESSION['edit_id']);
-$apiPostReq = curlGetRequest("posts.php?cate=bydistrict&district=" . $_SESSION['sess_district']);
+$apiPostReq = curlGetRequest("posts.php?cate=load&district=" . $_SESSION['sess_district']);
 $apiPosts = json_decode($apiPostReq, TRUE);
 ?>
 <html class="no-js" lang="zxx">
@@ -67,7 +67,6 @@ $apiPosts = json_decode($apiPostReq, TRUE);
             <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th>District</th>
                 <th>Action</th>
             </tr>
             </thead>
@@ -79,11 +78,10 @@ $apiPosts = json_decode($apiPostReq, TRUE);
                 <tr>
                     <td><?= $key + 1; ?></td>
                     <td><?= $obj['name']; ?></td>
-                    <td><?= $obj['district']; ?></td>
                     <td>
                         <a href="postsEdit.php?id=<?= $obj['id']; ?>" class="genric-btn primary-border"
                            title="Edit"><span class="fa fa-edit"></span> Edit</a>
-                        <a href="#" class="genric-btn danger-border" title="Delete"><span class="fa fa-trash"></span>
+                        <a href="api/requests/posts.php?cate=delete&id=<?= $obj['id'] ?>" class="genric-btn danger-border" title="Delete"><span class="fa fa-trash"></span>
                             Delete</a>
                     </td>
                 </tr>

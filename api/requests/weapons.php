@@ -22,7 +22,8 @@ switch ($_SERVER['REQUEST_METHOD']) {
         switch ($_GET['cate']) {
 
             case 'delete':
-                $weapons->delete($_GET['id']);
+                $del = $weapons->delete($_GET['id']);
+                if($del['status']=='ok') header("location:".$_SERVER['HTTP_REFERER']);
                 break;
 
             case 'loadbyid':
@@ -41,12 +42,12 @@ switch ($_SERVER['REQUEST_METHOD']) {
                 break;
 
             default:
-                echo "value of parameter category not known";
+                echo json_encode(['error'=>"value of parameter category not known"]);
                 break;
         }
         break;
     default:
-        echo $_SERVER['REQUEST_METHOD'] . "Request method not allowed";
+        echo json_encode(['error'=>$_SERVER['REQUEST_METHOD'] . "Request method not allowed"]);
         break;
 }
 

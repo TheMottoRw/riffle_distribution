@@ -2,9 +2,9 @@
 session_start();
 include_once "api_access.php";
 if (isset($_SESSION['edit_id'])) unset($_SESSION['edit_id']);
-$apiPoliceReq = curlGetRequest("assignment.php?cate=load&" . sessionsToGetParams());
+$apiPoliceReq = curlGetRequest("assignment.php?cate=returned&" . sessionsToGetParams());
 if(isset($_GET['from']) && isset($_GET['to'])){
-$apiPoliceReq = curlGetRequest("assignment.php?cate=returnedbyrange&sess_id=3&from=".$_GET['from']."&to=".$_GET['to']."&" . sessionsToGetParams());
+$apiPoliceReq = curlGetRequest("assignment.php?cate=returnedbyrange&sess_id=".$_SESSION['sess_id']."&from=".$_GET['from']."&to=".$_GET['to']."&" . sessionsToGetParams());
 }
 $apiPolice = json_decode($apiPoliceReq, TRUE);
 ?>
@@ -57,6 +57,8 @@ include_once "includes/" . $headers; ?>
     <h2 class="text-center">Filter report</h2>
     <div class="row">
     </div>
+    <button class="genric-btn primary circle" id="print">Print</button>
+
     <div class="table-responsive">
 
         <?php
@@ -90,7 +92,7 @@ include_once "includes/" . $headers; ?>
                 <th>Weapon</th>
                 <th>Assigned on</th>
                 <th>Returned on</th>
-                <th colspan="5">Action</th>
+<!--                <th colspan="5">Action</th>-->
             </tr>
             </thead>
             <tbody>
@@ -104,12 +106,12 @@ include_once "includes/" . $headers; ?>
                     <td><?= $obj['weapon_serial_number']; ?></td>
                     <td><?= $obj['assigned_on']; ?></td>
                     <td><?= $obj['returned_on']; ?></td>
-                    <td>
-                        <a href="policeEdit.php?id=<?= $obj['id']; ?>" class="genric-btn primary-border"
-                           title="Police edit">Edit</a>
-                        <a href="#api/requests/police.php?cate=delete&id=<?= $obj['id']; ?>"
-                           class="genric-btn danger-border" title="Delete">Delete</a>
-                    </td>
+<!--                    <td>-->
+<!--                        <a href="policeEdit.php?id=--><?//= $obj['id']; ?><!--" class="genric-btn primary-border"-->
+<!--                           title="Police edit">Edit</a>-->
+<!--                        <a href="#api/requests/police.php?cate=delete&id=--><?//= $obj['id']; ?><!--"-->
+<!--                           class="genric-btn danger-border" title="Delete">Delete</a>-->
+<!--                    </td>-->
                 </tr>
                 <?php
             }
@@ -219,6 +221,10 @@ include_once "includes/" . $headers; ?>
 <!-- Jquery Plugins, main Jquery -->
 <script src="./assets/js/plugins.js"></script>
 <script src="./assets/js/main.js"></script>
-
+<script>
+    $("#print").click(function(){
+        window.print();
+    })
+</script>
 </body>
 </html>

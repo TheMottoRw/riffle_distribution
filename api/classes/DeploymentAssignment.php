@@ -26,6 +26,18 @@ class DeploymentAssignment
         $police = $arr['police'];
         $workdate = $arr['workdate'];
 
+        //check if he is already assigned
+        $qy = $this->conn->prepare("SELECT * FROM deployment_assignment WHERE police=:police AND  work_date =:workdate");
+        $qy->execute(['police'=>$police,"workdate"=>$workdate]);
+
+        if($qy->rowCount() > 0) return ['status'=>'fail',"message"=>"<div class='alert alert-danger'>Sorry,he is already assigned to post</div>"];
+
+        //check if yesterday was on the same post
+        $qy = $this->conn->prepare("SELECT * FROM deployment_assignment WHERE police=:police AND post=:post AND  work_date = date_sub(:workdate,INTERVAL 1 DAY)");
+        $qy->execute(['police'=>$police,"post"=>$post,"workdate"=>$workdate]);
+
+        if($qy->rowCount() > 0) return ['status'=>'fail',"message"=>"<div class='alert alert-danger'>Can't be assigned back to post s/he has been working on yesterday</div>"];
+
         $insert = $this->conn->prepare("INSERT INTO deployment_assignment set post=:post,deployer=:deployer,police=:police,work_date=:workdate");
 
         $insert->execute(array('post' => $post, 'deployer' => $deployer, 'police' => $police, 'workdate' => $workdate));
@@ -48,6 +60,17 @@ class DeploymentAssignment
         $workdate = $arr['workdate'];
 
         $id = $arr['id'];
+        //check if he is already assigned
+        $qy = $this->conn->prepare("SELECT * FROM deployment_assignment WHERE police=:police AND  work_date =:workdate AND id!=:id");
+        $qy->execute(['police'=>$police,"workdate"=>$workdate,"id"=>$id]);
+
+        if($qy->rowCount() > 0) return ['status'=>'fail',"message"=>"<div class='alert alert-danger'>Sorry,he is already assigned to post</div>"];
+
+        //check if yesterday was on the same post
+        $qy = $this->conn->prepare("SELECT * FROM deployment_assignment WHERE police=:police AND post=:post AND  work_date = date_sub(:workdate,INTERVAL 1 DAY)");
+        $qy->execute(['police'=>$police,"post"=>$post,"workdate"=>$workdate]);
+
+        if($qy->rowCount() > 0) return ['status'=>'fail',"message"=>"<div class='alert alert-danger'>Can't be assigned back to post s/he has been working on yesterday</div>"];
 
         $upd = $this->conn->prepare("UPDATE deployment_assignment set post=:post,deployer=:deployer,police=:police,work_date=:workdate where id=:i ");
 
@@ -83,24 +106,33 @@ class DeploymentAssignment
         }
         return $feed;
     }
+    function declareWeaponSubmissionDelay($datas)
+    {
+        $id = $datas['id'];
+        $reason = $datas['reason'];
+        $feed = ['status'=>'ok','message'=>"<div class='alert alert-success'>Weapon submitted</div>"];
+        $weapon = $this->weaponObj->getBySerial($datas['weapon'])[0]['id'];
+        $upd = $this->conn->prepare("UPDATE deployment_assignment set reason=:reason where id=:id");
+        $upd->execute(array('reason' => $reason,"id"=>$id));
+        if($upd->rowCount() != 1){
+            $feed = ['status'=>'fail','message'=>"<div class='alert alert-danger'>Failed to register weapon submission".json_encode($upd->errorInfo())."</div>"];
+        }
+        return $feed;
+    }
 
     // delete
     function delete($id)
     {
-        $del = $this->conn->prepare("DELETE FROM deployment_assignment where id=:i ");
+        $del = $this->conn->prepare("UPDATE  deployment_assignment SET delete_status=:stat where id=:i ");
         $del->execute(array('stat' => "deleted", 'i' => $id));
-        if ($del) {
-            echo "deleted succeffully";
-        } else {
-            echo "failed to delete" . json_encode($del->errorInfo());
-        }
+        return ['status'=>'ok'];
     }
 
 
     // fetch or retrieve 
     function getById($id)
     {
-        $getall = $this->conn->prepare("SELECT *,p.police_id from deployment_assignment dass INNER JOIN police p ON p.id=dass.police where dass.id=:i");
+        $getall = $this->conn->prepare("SELECT *,p.police_id from deployment_assignment dass INNER JOIN police p ON p.id=dass.police where delete_status!='deleted' and dass.id=:i ");
         $getall->execute(array('i' => $id));
         $data = $getall->fetchAll(PDO::FETCH_ASSOC);
         return $data;
@@ -109,7 +141,7 @@ class DeploymentAssignment
     function getByPost($arr)
     {
         $post = $arr['post'];
-        $getall = $this->conn->prepare("SELECT * from deployment_assignment where post=:post");
+        $getall = $this->conn->prepare("SELECT * from deployment_assignment where delete_status!='deleted' and post=:post");
         $getall->execute(['post' => $post]);
         $data = $getall->fetchAll(PDO::FETCH_ASSOC);
         return $data;
@@ -117,16 +149,38 @@ class DeploymentAssignment
     function getByDeployer($arr)
     {
         $deployer = $arr['deployer'];
+        $getall = $this->conn->prepare("SELECT dass.*,p.name as police_name,p.police_id,pst.name as post_name,w.serial_number as weapon_serial_number from deployment_assignment dass 
+                                                    INNER JOIN posts pst on pst.id=dass.post INNER JOIN police p ON p.id=dass.police
+                                                     LEFT JOIN weapons w ON w.id=dass.weapon where dass.delete_status!='deleted'");
+        $getall->execute();
+        $data = $getall->fetchAll(PDO::FETCH_ASSOC);
+        return $data;
+    }
+
+    function searchByPoliceKeyword($arr)
+    {
+        $keyword = $arr['keyword'];
         $getall = $this->conn->prepare("SELECT dass.*,p.name as police_name,pst.name as post_name,w.serial_number as weapon_serial_number from deployment_assignment dass 
                                                     INNER JOIN posts pst on pst.id=dass.post INNER JOIN police p ON p.id=dass.police
-                                                     LEFT JOIN weapons w ON w.id=dass.weapon where dass.deployer=:deployer");
-        $getall->execute(['deployer' => $deployer]);
+                                                     LEFT JOIN weapons w ON w.id=dass.weapon where dass.delete_status!='deleted' and  p.phone=:keyword || p.police_id=:keyword  ORDER BY dass.id DESC");
+        $getall->execute(['keyword' => $keyword]);
+        $data = $getall->fetchAll(PDO::FETCH_ASSOC);
+        return $data;
+    }
+    function getByPolice($arr)
+    {
+        $police = $arr['police'];
+        if(!is_numeric($police)) return [];
+        $getall = $this->conn->prepare("SELECT dass.*,p.name as police_name,pst.name as post_name,w.serial_number as weapon_serial_number from deployment_assignment dass 
+                                                    INNER JOIN posts pst on pst.id=dass.post INNER JOIN police p ON p.id=dass.police
+                                                     LEFT JOIN weapons w ON w.id=dass.weapon where dass.police=:police ORDER BY id DESC");
+        $getall->execute(['police' => $police]);
         $data = $getall->fetchAll(PDO::FETCH_ASSOC);
         return $data;
     }
     function get($arr)
     {
-        $getall = $this->conn->prepare("SELECT dass.*,p.name as police_name,pst.name as post_name,w.serial_number as weapon_serial_number from deployment_assignment dass 
+        $getall = $this->conn->prepare("SELECT dass.*,p.name as police_name,p.police_id,pst.name as post_name,w.serial_number as weapon_serial_number from deployment_assignment dass 
                                                     INNER JOIN posts pst on pst.id=dass.post INNER JOIN police p ON p.id=dass.police
                                                      LEFT JOIN weapons w ON w.id=dass.weapon");
         $getall->execute();
@@ -137,8 +191,8 @@ class DeploymentAssignment
         $deployer = $arr['sess_id'];
         $getall = $this->conn->prepare("SELECT dass.*,p.name as police_name,pst.name as post_name,w.serial_number as weapon_serial_number from deployment_assignment dass 
                                                     INNER JOIN posts pst on pst.id=dass.post INNER JOIN police p ON p.id=dass.police
-                                                     LEFT JOIN weapons w ON w.id=dass.weapon WHERE dass.returned_on IS NULL AND dass.deployer=:deployer");
-        $getall->execute(['deployer'=>$deployer]);
+                                                     LEFT JOIN weapons w ON w.id=dass.weapon WHERE dass.returned_on IS NULL");
+        $getall->execute();
         $data = $getall->fetchAll(PDO::FETCH_ASSOC);
         return $data;
     }
@@ -147,8 +201,8 @@ class DeploymentAssignment
         $deployer = $arr['sess_id'];
         $getall = $this->conn->prepare("SELECT dass.*,p.name as police_name,pst.name as post_name,w.serial_number as weapon_serial_number from deployment_assignment dass 
                                                     INNER JOIN posts pst on pst.id=dass.post INNER JOIN police p ON p.id=dass.police
-                                                     LEFT JOIN weapons w ON w.id=dass.weapon WHERE dass.returned_on IS NOT NULL AND dass.deployer=:deployer");
-        $getall->execute(['deployer'=>$deployer]);
+                                                     LEFT JOIN weapons w ON w.id=dass.weapon WHERE dass.returned_on IS NOT NULL");
+        $getall->execute();
         $data = $getall->fetchAll(PDO::FETCH_ASSOC);
         return $data;
     }
@@ -159,8 +213,8 @@ class DeploymentAssignment
         $to = $arr['to'];
         $getall = $this->conn->prepare("SELECT dass.*,p.name as police_name,pst.name as post_name,w.serial_number as weapon_serial_number from deployment_assignment dass 
                                                     INNER JOIN posts pst on pst.id=dass.post INNER JOIN police p ON p.id=dass.police
-                                                     LEFT JOIN weapons w ON w.id=dass.weapon WHERE dass.returned_on IS NULL AND dass.deployer=:deployer AND dass.assigned_on BETWEEN '".$from."' AND '".$to."'");
-        $getall->execute(['deployer'=>$deployer]);
+                                                     LEFT JOIN weapons w ON w.id=dass.weapon WHERE dass.returned_on IS NULL AND dass.assigned_on BETWEEN '".$from."' AND '".$to."'");
+        $getall->execute();
         $data = $getall->fetchAll(PDO::FETCH_ASSOC);
         return $data;
     }
@@ -171,8 +225,43 @@ class DeploymentAssignment
         $to = $arr['to'];
         $getall = $this->conn->prepare("SELECT dass.*,p.name as police_name,pst.name as post_name,w.serial_number as weapon_serial_number from deployment_assignment dass 
                                                     INNER JOIN posts pst on pst.id=dass.post INNER JOIN police p ON p.id=dass.police
-                                                     LEFT JOIN weapons w ON w.id=dass.weapon WHERE dass.returned_on IS NOT NULL AND dass.deployer=:deployer AND dass.assigned_on BETWEEN '".$from."' AND '".$to."'");
-        $getall->execute(['deployer'=>$deployer]);
+                                                     LEFT JOIN weapons w ON w.id=dass.weapon WHERE dass.returned_on IS NOT NULL AND dass.assigned_on BETWEEN '".$from."' AND '".$to."'");
+        $getall->execute();
+
+        $data = $getall->fetchAll(PDO::FETCH_ASSOC);
+        return $data;
+    }
+
+    function getNotReturnedByDate($arr){
+        $deployer = $arr['sess_id'];
+        $workdate = $arr['workdate'];
+        $getall = $this->conn->prepare("SELECT dass.*,p.name as police_name,pst.name as post_name,w.serial_number as weapon_serial_number from deployment_assignment dass 
+                                                    INNER JOIN posts pst on pst.id=dass.post INNER JOIN police p ON p.id=dass.police
+                                                     LEFT JOIN weapons w ON w.id=dass.weapon WHERE dass.returned_on IS NULL AND dass.work_date=:workdate");
+        $getall->execute(['workdate'=>$workdate]);
+        $data = $getall->fetchAll(PDO::FETCH_ASSOC);
+        return $data;
+    }
+
+    function getReturnedByDate($arr){
+        $deployer = $arr['sess_id'];
+        $workdate = $arr['workdate'];
+        $getall = $this->conn->prepare("SELECT dass.*,p.name as police_name,pst.name as post_name,w.serial_number as weapon_serial_number from deployment_assignment dass 
+                                                    INNER JOIN posts pst on pst.id=dass.post INNER JOIN police p ON p.id=dass.police
+                                                     LEFT JOIN weapons w ON w.id=dass.weapon WHERE dass.returned_on IS NOT NULL AND dass.work_date=:workdate");
+        $getall->execute(['workdate'=>$workdate]);
+
+        $data = $getall->fetchAll(PDO::FETCH_ASSOC);
+        return $data;
+    }
+
+    function getByDate($arr){
+        $deployer = $arr['sess_id'];
+        $workdate = $arr['workdate'];
+        $getall = $this->conn->prepare("SELECT dass.*,p.name as police_name,p.police_id,pst.name as post_name,w.serial_number as weapon_serial_number from deployment_assignment dass 
+                                                    INNER JOIN posts pst on pst.id=dass.post INNER JOIN police p ON p.id=dass.police
+                                                     LEFT JOIN weapons w ON w.id=dass.weapon WHERE dass.work_date=:workdate");
+        $getall->execute(['workdate'=>$workdate]);
 
         $data = $getall->fetchAll(PDO::FETCH_ASSOC);
         return $data;
@@ -180,15 +269,15 @@ class DeploymentAssignment
     function dashboard($arr){
         $data = [];
         $deployer = $arr['sess_id'];
-        $qy = $this->conn->prepare("SELECT COUNT(assigned_on) as not_returned,left(dass.assigned_on,10) AS assignment_date FROM deployment_assignment dass WHERE deployer=:deployer AND returned_on IS NULL GROUP BY LEFT(dass.assigned_on,10)");
-        $qy->execute(['deployer'=>$deployer]);
+        $qy = $this->conn->prepare("SELECT COUNT(assigned_on) as not_returned,left(dass.assigned_on,10) AS assignment_date FROM deployment_assignment dass WHERE returned_on IS NULL GROUP BY LEFT(dass.assigned_on,10)");
+        $qy->execute();
         $notReturned = $qy->fetchAll(PDO::FETCH_ASSOC);
 
-        $qyReturned = $this->conn->prepare("SELECT COUNT(assigned_on) as returned,left(dass.assigned_on,10) AS assignment_date FROM deployment_assignment dass WHERE deployer=:deployer AND returned_on IS NOT NULL GROUP BY LEFT(dass.assigned_on,10)");
-        $qyReturned->execute(['deployer'=>$deployer]);
+        $qyReturned = $this->conn->prepare("SELECT COUNT(assigned_on) as returned,left(dass.assigned_on,10) AS assignment_date FROM deployment_assignment dass WHERE returned_on IS NOT NULL GROUP BY LEFT(dass.assigned_on,10)");
+        $qyReturned->execute();
         $returned = $qyReturned->fetchAll(PDO::FETCH_ASSOC);
 
-        $qyAllDate = $this->conn->query("SELECT LEFT(assigned_on,10) as dates FROM deployment_assignment WHERE deployer=$deployer GROUP BY LEFT(assigned_on,10)");
+        $qyAllDate = $this->conn->query("SELECT LEFT(assigned_on,10) as dates FROM deployment_assignment GROUP BY LEFT(assigned_on,10)");
         $dataAllDate = $qyAllDate->fetchAll(PDO::FETCH_ASSOC);
         /*
          * [{date:{returned:12,not_returned:12}},]
