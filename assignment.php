@@ -3,7 +3,8 @@ session_start();
 include_once "api_access.php";
 if (isset($_SESSION['edit_id'])) unset($_SESSION['edit_id']);
 
-$apiPostReq = curlGetRequest("posts.php?cate=bydistrict&district=" . $_SESSION['sess_district']);
+$apiPostReq = curlGetRequest("posts.php?cate=load&district=" . $_SESSION['sess_district']);
+//echo $apiPostReq;exit;
 $apiPosts = json_decode($apiPostReq, TRUE);
 $apiAssignmentsReq = curlGetRequest("assignment.php?cate=bydeployer&deployer=" . $_SESSION['sess_id']);
 $apiAssignments = json_decode($apiAssignmentsReq, TRUE);

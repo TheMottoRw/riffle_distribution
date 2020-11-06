@@ -38,7 +38,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
 
             case 'load':
                 // header("Content-Type:application/json");
-                echo json_encode($posts->get($_GET));
+                echo json_encode($posts->get());
                 break;
 
             default:
