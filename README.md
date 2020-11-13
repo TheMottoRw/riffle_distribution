@@ -9,6 +9,8 @@ This project it intended for management of riffle distribution
    - Import database from <b>root/api/database/armory.sql</b>
    - Change database user to yours from <b>root/api/classes/Database.php</b> replace <b>super</b> with the one you use
    - Depends on the path where you put project files,modify url address in <b>root/api_access.php</b> Line 3 and 21 to the one you use
+   - Change dashboard.php line 157 to your custom URL If you have changed default path 
+   - Change assignment.php line 275 to your custom URL If you have changed default path 
    - Then,web is set well now setup its android application from www.github.com/themottorw/riffle_distribution_app
 
 

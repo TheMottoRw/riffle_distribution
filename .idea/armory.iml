@@ -11,5 +11,7 @@
     <orderEntry type="module" module-name="sosoma_crms" />
     <orderEntry type="module" module-name="Laravel" />
     <orderEntry type="module" module-name="parking" />
+    <orderEntry type="module" module-name="codeigniter4" />
+    <orderEntry type="module" module-name="oia" />
   </component>
 </module>

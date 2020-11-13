@@ -125,7 +125,7 @@ $apiPolice = json_decode($apiPoliceReq, TRUE);
      aria-labelledby="portfolioModal2Label" style="display: none;" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
-            <form action="<?= $_SESSION['PHP_SELF']; ?>" method="POST" class="form-contact contact_form">
+            <form action="<?= $_SERVER['PHP_SELF']; ?>" method="POST" class="form-contact contact_form">
                 <div class="modal-body">
                     <div class="container">
                         <div class="row justify-content-center">

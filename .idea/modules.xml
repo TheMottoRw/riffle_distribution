@@ -4,7 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../../../learn/Laravel/.idea/Laravel.iml" filepath="$PROJECT_DIR$/../../../learn/Laravel/.idea/Laravel.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/armory.iml" filepath="$PROJECT_DIR$/.idea/armory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../rental_control/.idea/codeigniter4.iml" filepath="$PROJECT_DIR$/../../rental_control/.idea/codeigniter4.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../izipark/.idea/izipark.iml" filepath="$PROJECT_DIR$/../../izipark/.idea/izipark.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../oia/.idea/oia.iml" filepath="$PROJECT_DIR$/../../oia/.idea/oia.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../../parking/.idea/parking.iml" filepath="$PROJECT_DIR$/../../../parking/.idea/parking.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../../qrcode/phpqrcode/.idea/phpqrcode.iml" filepath="$PROJECT_DIR$/../../../qrcode/phpqrcode/.idea/phpqrcode.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../quickdata/.idea/quickdata.iml" filepath="$PROJECT_DIR$/../../quickdata/.idea/quickdata.iml" />
